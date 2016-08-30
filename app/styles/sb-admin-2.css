@@ -356,3 +356,12 @@ table.dataTable thead .sorting:after {
 .panel-yellow a:hover {
     color: #df8a13;
 }
+
+
+/*Custom css by Shriram*/
+
+div.k-grid-header th.k-header {
+    background-color: #d9edf7 !important;
+    font-weight: bold;
+    height:30px;
+}
