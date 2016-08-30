@@ -1,0 +1,202 @@
+ <div ng-init="callOnce()" ng-controller="TableCtrl" >
+    <div kendo-grid k-options="sampleOptions" k-data-source="dataSourceSample"></div>
+<!--                <select kendo-drop-down-list  style="width: 100%;">
+                     <option>Slovakia</option>
+                     <option>Slovenia</option>
+                     <option>Spain</option>
+                     <option>Sweden</option>
+                     <option>Switzerland</option>
+                     <option>Turkey</option>
+                     <option>Ukraine</option>
+                     <option>United Kingdom</option>
+                     <option>Vatican City</option>
+                </select> -->
+   <div class="col-lg-12" >
+      <div class="page-header" >
+         <h1 ><span >Tier Board  </span><button class="btn-circle btn btn-lg btn-success" type="button" ><i class="fa fa-check" ></i></button><span > </span><span ><button type="button" class="btn btn-lg btn-primary" >Edit</button></span></h1>
+      </div>
+   </div>
+   <div class="row" >
+      <div class="col-lg-4" >
+         <div class="panel panel-info" >
+            <div class="panel-heading" ><span class="panel-title" ><b >Target FPY &gt;= 90%</b></span></div>
+            <div class="panel-body" >
+               <h4 >Business Case</h4>
+               <h5 ><span > </span><b ><u >Our Mission</u></b></h5>
+               <p >Together we design,build and deliver innovative solutions and exceptioal services to create ultimate customer experience</p>
+               <div ><span > </span><i class="fa fa-hand-o-right" ></i><span >   Meet Daily Output Target </span></div>
+               <div ><span > </span><i class="fa fa-hand-o-right" ></i><span >   OQA = 100% Acceptance </span></div>
+               <div ><span > </span><i class="fa fa-hand-o-right" ></i><span >   FPY &gt;= 90%</span></div>
+               <div ><span > </span><i class="fa fa-hand-o-right" ></i><span >   Gemba Walk (Observe,Engage,Improve)</span></div>
+               <div ><span > </span><i class="fa  fa-hand-o-right" ></i><span >   No Safety Issue</span></div>
+               <div ><span > </span><i class="fa  fa-hand-o-right" ></i><span >   Good 5S</span></div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-8" >
+         <div class="panel panel-info" >
+            <div class="panel-heading" ><span class="panel-title" ><b >Current FPY = 93%</b></span></div>
+            <div class="panel-body" >
+               <h4 >Output Status</h4>
+               <div class="col-lg-6" >
+                  <div class="well" >
+                     <h5 ><b ><u >Daily Status</u></b></h5>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Target : 6</span></div>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Yesterday : 6</span></div>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Today : 6</span></div>
+                  </div>
+               </div>
+               <div class="col-lg-6" >
+                  <div class="well" >
+                     <h5 ><b ><u >Cummulative</u></b></h5>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Monthly Target : 6</span></div>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Acheived : 6</span></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row ng-scope" >
+      <div class="col-lg-6" >
+         <div class="panel panel-info" >
+            <div class="panel-heading" ><span class="panel-title" ><b >Weekly FPY</b></span></div>
+            <div class="panel-body" >
+               <div class="table-responsive" >
+                  <span > </span><span > </span><span > </span><span > </span><span > </span><span > </span><span > </span>
+                  <table class="table table-striped table-bordered" >
+                     <thead >
+                        <tr class="info" >
+                           <th >Products </th>
+                           <th >Week 1 </th>
+                           <th >Week 2</th>
+                           <th >Week 3   </th>
+                           <th >Week 4   </th>
+                           <th >Remarks  </th>
+                        </tr>
+                     </thead>
+                     <tbody >
+                        <tr >
+                           <td class="info" >QS3 0.2 ml</td>
+                           <td >6 </td>
+                           <td >6 </td>
+                           <td >6  </td>
+                           <td >6  </td>
+                           <td >Acheived Target  </td>
+                        </tr>
+                        <tr >
+                           <td class="info" >QS3 0.6 ml</td>
+                           <td >6 </td>
+                           <td >6 </td>
+                           <td >6  </td>
+                           <td >6  </td>
+                           <td >Acheived Target  </td>
+                        </tr>
+                        <tr >
+                           <td class="info" >QS5 0.2 ml</td>
+                           <td >6 </td>
+                           <td >8 </td>
+                           <td >6  </td>
+                           <td >9 </td>
+                           <td >Ahead Target  </td>
+                        </tr>
+                        <tr >
+                           <td class="info" >QS5 0.6 ml</td>
+                           <td >6 </td>
+                           <td >2 </td>
+                           <td >4  </td>
+                           <td >5  </td>
+                           <td >Behind Target  </td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-6" >
+         <div class="panel panel-info" >
+            <div class="panel-heading" ><span class="panel-title" ><b >4M Status</b></span></div>
+            <div class="panel-body" >
+               <div class="table-responsive" >
+                  <span > </span><span > </span><span > </span><span > </span><span > </span><span > </span><span > </span>
+                  <table class="table table-striped table-bordered" >
+                     <thead >
+                        <tr class="info" >
+                           <th ># </th>
+                           <th >Yesterday</th>
+                           <th >Today </th>
+                           <th >Remarks   </th>
+                        </tr>
+                     </thead>
+                     <tbody >
+                        <tr >
+                           <td class="info" >Man </td>
+                           <td >Mark </td>
+                           <td >Otto </td>
+                           <td >@mdo  </td>
+                        </tr>
+                        <tr >
+                           <td class="info" >Material </td>
+                           <td >Jacob </td>
+                           <td >Thornton </td>
+                           <td >@fat  </td>
+                        </tr>
+                        <tr >
+                           <td class="info" >Machine </td>
+                           <td >Larry </td>
+                           <td >the Bird </td>
+                           <td >@twitter   </td>
+                        </tr>
+                        <tr >
+                           <td class="info" >Method </td>
+                           <td >Larry </td>
+                           <td >the Bird </td>
+                           <td >@twitter   </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row ng-scope" >
+      <div class="col-lg-12" >
+         <div class="panel panel-info" >
+            <div class="panel-heading" ><span class="panel-title" ><b >Issue Tracking </b></span></div>
+            <div class="panel-body" >
+               <div class="table-responsive" >
+                  <span > </span><span > </span><span > </span><span > </span><span > </span>
+                  <table class="table" >
+                     <thead >
+                        <tr >
+                           <th >Date </th>
+                           <th >Issue/Root cause </th>
+                           <th >Action(s) </th>
+                           <th >Who   </th>
+                           <th >Due</th>
+                           <th >Status</th>
+                        </tr>
+                     </thead>
+                     <tbody >
+                        <tr class="danger" >
+                           <td >1 </td>
+                           <td >Mark </td>
+                           <td >Otto </td>
+                           <td >@mdo  </td>
+                           <td >@mdo  </td>
+                           <td>@mdo  </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <button type="button" class="btn btn-sm btn-primary" >Add Issue</button>
+               
+              
+            </div>
+         </div>
+      </div>
+   </div>
+</div> 
