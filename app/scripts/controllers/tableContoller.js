@@ -116,7 +116,7 @@ angular.module('sbAdminApp')
                         // width: 15
                     }],
                     editable: true,
-            save: $scope.onChangeHandler
+                    save: $scope.onChangeHandler
                 };
             }
 
@@ -237,13 +237,13 @@ angular.module('sbAdminApp')
             $scope.addIssueRow = function() {
                 $scope.issueDataSource.add({
 
-                    "id": 12,
-                    "products": "New Product",
-                    "week1": "0",
-                    "week2": "0",
-                    "week3": "0",
-                    "week4": "0",
-                    "remarks": "Remarks"
+                    "id": 4,
+                    "date": "Fri Mar 30 2012 00:00:00 GMT+0200",
+                    "issue": "1",
+                    "action": "2",
+                    "who": "4",
+                    "due": "4",
+                    "status": "Behind"
 
 
                 });
