@@ -300,9 +300,11 @@ table.dataTable thead .sorting:after {
 }
 
 .font-relative {
-    font-size: 1.6vw;
+    font-size: 1.2vw;
 }
-
+.padding-top-row{
+    padding-top:10px;
+}
 .panel-green {
     border-color: #5cb85c;
 }
