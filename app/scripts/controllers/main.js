@@ -7,7 +7,7 @@
  * Controller of the sbAdminApp
  */
 angular.module('sbAdminApp')
-    .controller('MainCtrl', function($scope, $position, $state) {
+    .controller('MainCtrl', function($scope, $position, $state, $timeout) {
 
         $scope.instrumentObjArr = [{
             instrumentName: "QuantStudio Q3 & Q5",
@@ -117,6 +117,23 @@ angular.module('sbAdminApp')
         }];
 
         $scope.clickInstrument = function(instr) {
-            $state.go('dashboard.table');
+            if (instr.type === "button") {
+                $scope.addInstrument();
+            } else {
+                $state.go('dashboard.table');
+            }
+        };
+        $scope.addInstrument = function() {
+            $scope.instrumentObjArr.push({
+                instrumentName: "Step One & Step One Plus",
+                comments: "",
+                colour: "green",
+                linelead: "Shriram",
+                supervisor: "Lian Seng",
+                type: "comments"
+            });
+            $timeout(function() {
+                $scope.$apply();
+            });
         }
     });

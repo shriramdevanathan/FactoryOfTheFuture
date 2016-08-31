@@ -1,14 +1,19 @@
 <div>
-    <div class="row">
+    
         <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header"><span>Dashboard</span> <button type="button" ng-click="addInstrument()" class="btn btn-lg btn-primary pull-right" >Add Cell</button></h1>
+           
         </div>
+        
         <!-- /.col-lg-12 -->
-    </div>
+   
     <!-- /.row -->
     <div class="row padding-top-row">
-        <stats ng-repeat="obj in instrumentObjArr" ng-click="clickInstrument(obj.instrumentName)" number="{{obj.instrumentName}}" comments="{{obj.comments}}" colour="{{obj.colour}}" linelead="{{obj.linelead}}" supervisor="{{obj.supervisor}}" type="{{obj.type}}">
+        <stats ng-repeat="obj in instrumentObjArr" ng-click="clickInstrument(obj)" number="{{obj.instrumentName}}" comments="{{obj.comments}}" colour="{{obj.colour}}" linelead="{{obj.linelead}}" supervisor="{{obj.supervisor}}" type="{{obj.type}}">
     </div>
+
+    
+    
     
     
 </div>

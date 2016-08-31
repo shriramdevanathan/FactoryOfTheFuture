@@ -1,5 +1,5 @@
 <div style="cursor:pointer" class="col-lg-2 col-md-6">
-    <div class="panel panel-{{colour}}">
+    <div ng-show="type==='comments'" class="panel panel-{{colour}}">
         <div class="panel-heading">
             <div class="row">
                 <div class="col-xs-2">
@@ -19,4 +19,8 @@
                 <div class="clearfix"></div>
         </div>
     </div>
+<!--     <div ng-show="type==='button'" style="padding:20px;text-align:center">
+        <button type="button" class="btn btn-info btn-circle btn-xl"><i class="glyphicon glyphicon-plus"></i>
+        </button>
+    </div> -->
 </div>
