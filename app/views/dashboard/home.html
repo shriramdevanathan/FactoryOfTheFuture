@@ -7,28 +7,7 @@
     </div>
     <!-- /.row -->
     <div class="row padding-top-row">
-        <stats number="QuantStudio" comments="" colour="green" linelead="Shriram" supervisor="Shriram" type="comments"></stats>
-        <stats number="Step One" comments="" linelead="Shriram" supervisor="Eshu" colour="green" type="user"></stats>
-        <stats number="ViiA 7" comments="" linelead="Mike" supervisor="Yushuang" colour="green" type="shopping-cart"></stats>
-        <stats number="7500 Fast" comments="" linelead="Yushuang" supervisor="Michael" colour="red" type="support"></stats>
-        <stats number="QuantStudio" comments="" colour="green" linelead="Shriram" supervisor="Shriram" type="comments"></stats>
-        <stats number="Step One" comments="" linelead="Shriram" supervisor="Eshu" colour="green" type="user"></stats>
-    </div>
-    <div class="row padding-top-row">
-        <stats number="ViiA 7" comments="" linelead="Mike" supervisor="Yushuang" colour="green" type="shopping-cart"></stats>
-        <stats number="7500 Fast" comments="" linelead="Yushuang" supervisor="Michael" colour="green" type="support"></stats>
-        <stats number="ViiA 7" comments="" linelead="Mike" supervisor="Yushuang" colour="yellow" type="shopping-cart"></stats>
-        <stats number="7500 Fast" comments="" linelead="Yushuang" supervisor="Michael" colour="green" type="support"></stats>
-        <stats number="ViiA 7" comments="" linelead="Mike" supervisor="Yushuang" colour="yellow" type="shopping-cart"></stats>
-        <stats number="7500 Fast" comments="" linelead="Yushuang" supervisor="Michael" colour="green" type="support"></stats>
-
-    </div>
-    <div class="row padding-top-row">
-        <stats number="ViiA 7" comments="" linelead="Mike" supervisor="Yushuang" colour="green" type="shopping-cart"></stats>
-        <stats number="7500 Fast" comments="" linelead="Yushuang" supervisor="Michael" colour="green" type="support"></stats>
-        <stats number="ViiA 7" comments="" linelead="Mike" supervisor="Yushuang" colour="green" type="shopping-cart"></stats>
- 
-
+        <stats ng-repeat="obj in instrumentObjArr" ng-click="clickInstrument(obj.instrumentName)" number="{{obj.instrumentName}}" comments="{{obj.comments}}" colour="{{obj.colour}}" linelead="{{obj.linelead}}" supervisor="{{obj.supervisor}}" type="{{obj.type}}">
     </div>
     
     
