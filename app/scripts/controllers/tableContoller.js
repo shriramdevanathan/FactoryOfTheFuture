@@ -11,6 +11,7 @@ angular.module('sbAdminApp')
         function($scope, $timeout) {
             $scope.onChangeHandler = function() {
                 $scope.fpyDataGrid.refresh();
+                $scope.issueDataGrid.refresh();
             }
 
 
@@ -115,7 +116,7 @@ angular.module('sbAdminApp')
                         // width: 15
                     }],
                     editable: true,
-                    save: $scope.onChangeHandler
+            save: $scope.onChangeHandler
                 };
             }
 
@@ -165,7 +166,8 @@ angular.module('sbAdminApp')
                             fields: {
                                 date: {
                                     type: "date",
-                                    editable: true
+                                    editable: true,
+
                                 },
 
                                 issue: {
@@ -197,6 +199,7 @@ angular.module('sbAdminApp')
                     columns: [{
                         field: "date",
                         title: "Date",
+                        format: "{0:MM-dd-yyyy}"
                         // width: 15
                     }, {
                         field: "issue",
