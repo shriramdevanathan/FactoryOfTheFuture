@@ -308,7 +308,22 @@ table.dataTable thead .sorting:after {
 .panel-green {
     border-color: #5cb85c;
 }
-
+.close-icon{
+    position: absolute;
+    top: 2px;
+    left: 45%;
+    z-index: 100;
+    background-color: #FFF;
+    padding: 9px 5px 10px 4px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: .6;
+    text-align: center;
+    font-size: 22px;
+    line-height: 10px;
+    border-radius: 50%;
+}
 .panel-green .panel-heading {
     border-color: #5cb85c;
     color: #fff;

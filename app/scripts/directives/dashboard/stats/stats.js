@@ -22,7 +22,9 @@ angular.module('sbAdminApp')
                 'type': '@',
                 'goto': '@',
                 'supervisor': '@',
-                'linelead': '@'
+                'linelead': '@',
+                'removeflag': '=',
+                'removeinstrument': '&'
             }
 
         }
