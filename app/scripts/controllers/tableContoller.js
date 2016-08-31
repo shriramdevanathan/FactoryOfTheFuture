@@ -8,7 +8,7 @@
  */
 angular.module('sbAdminApp')
     .controller('TableCtrl',
-        function($scope) {
+        function($scope, $timeout) {
 
             function initTableData() {
                 //Ideally Data should come from 
@@ -116,9 +116,14 @@ angular.module('sbAdminApp')
                     editable: true,
                 };
             }
+            // initTableData();
 
             $scope.callOnce = function() {
-                initTableData();
+
             };
+            $timeout(function() {
+                initTableData();
+                $scope.$apply();
+            });
         }
 );

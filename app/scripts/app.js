@@ -12,7 +12,8 @@ angular
         'oc.lazyLoad',
         'ui.router',
         'ui.bootstrap',
-        'angular-loading-bar'
+        'angular-loading-bar',
+        'kendo.directives'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
         function($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
@@ -106,15 +107,9 @@ angular
                     resolve: {
                         loadMyFile: function($ocLazyLoad) {
                             return $ocLazyLoad.load({
-                                    name: 'kendo.directives',
-                                    files: [
-                                        'vendor/kendoui-2014.2.1008/src/js/kendo.web.min.js',
-                                    ]
-                                }),
-                                $ocLazyLoad.load({
-                                    name: 'sbAdminApp',
-                                    files: ['scripts/controllers/tableContoller.js']
-                                })
+                                name: 'sbAdminApp',
+                                files: ['scripts/controllers/tableContoller.js']
+                            })
                         }
                     }
 
