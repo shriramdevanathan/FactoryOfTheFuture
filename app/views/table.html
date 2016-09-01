@@ -37,16 +37,16 @@
                <div class="col-lg-6" >
                   <div class="well" >
                      <h5 ><b ><u >Daily Status</u></b></h5>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Target : </span><span ><input type="text" id='{{outputDaily.id}}' ng-model="outputDaily.target" class="inactive" readonly /> </span></div>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Yesterday : </span><span ><input type="text" id='{{outputDaily.id+1}}' ng-model="outputDaily.yesterday" class="inactive" readonly /></span></div>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Today : </span><span ><input type="text" id='{{outputDaily.id+2}}' ng-model="outputDaily.today" class="inactive" readonly /></span></div>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Target : </span><span ><input type="text" id='{{outputDaily.id}}' ng-model="outputDaily.target" class="inactive" readonly style="border:1px;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-style:none;"/> </span></div>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Yesterday : </span><span ><input type="text" id='{{outputDaily.id+1}}' ng-model="outputDaily.yesterday" class="inactive" readonly style="border:1px;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-style:none;"/></span></div>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Today : </span><span ><input type="text" id='{{outputDaily.id+2}}' ng-model="outputDaily.today" class="inactive" readonly style="border:1px;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-style:none;"/></span></div>
                   </div>
                </div>
                <div class="col-lg-6" >
                   <div class="well" >
                      <h5 ><b ><u >Cummulative</u></b></h5>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Monthly Target : </span><span ><input type="text" id='{{outputCummulative.id}}' ng-model="outputCummulative.target" class="inactive" readonly /></span></div>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Acheived : </span><span ><input type="text" id='{{outputCummulative.id+1}}' ng-model="outputCummulative.acheived" class="inactive" readonly /></span></div>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Monthly Target : </span><span ><input type="text" id='{{outputCummulative.id}}' ng-model="outputCummulative.target" class="inactive" readonly style="border:1px;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-style:none;"/></span></div>
+                     <div ><i class="fa fa-hand-o-right  " ></i><span > Acheived : </span><span ><input type="text" id='{{outputCummulative.id+1}}' ng-model="outputCummulative.acheived" class="inactive" readonly style="border:1px;border-bottom-style:none;border-top-style:none;border-left-style:none;border-right-style:none;"/></span></div>
                   </div>
                </div>
             </div>
@@ -70,20 +70,7 @@
             <div class="panel-body" >
                <div class="table-responsive" >
                <span > </span><span > </span><span > </span><span > </span><span > </span><span > </span><span > </span>
-                  <table class="table table-striped table-bordered">  
-                     <tr class="info">  
-                      <th>#</th>  
-                      <th>Yesterday</th>  
-                      <th>Today</th>  
-                      <th>Remarks</th>
-                      </tr>  
-                      <tr ng-repeat="data4M in data4Ms">  
-                        <td> <input type="text" id='{{data4M.id}}' ng-model="data4M.item" class="inactive" readonly />  </td>  
-                        <td> <input type="text" id='{{data4M.id+1}}' ng-model="data4M.yesterday" class="inactive" readonly /></td>  
-                        <td> <input type="text" id='{{data4M.id+2}}' ng-model="data4M.today" class="inactive" readonly /></td> 
-                        <td> <input type="text" id='{{data4M.id+3}}' ng-model="data4M.remarks" class="inactive" readonly /></td> 
-                    </tr>  
-                 </table> 
+               <div style="height:220px;" id="4mstatues" kendo-grid="fourMDataGrid" k-options="fourMOptions" k-rebind="fourMOptions" k-data-source="fourMDataSource"  ></div>
                </div>
             </div>
          </div>
@@ -96,14 +83,9 @@
             <div class="panel-body" >
                <div class="table-responsive" >
                   <span > </span><span > </span><span > </span><span > </span><span > </span>
-
-                  <div kendo-grid="issueDataGrid" k-options="issueOptions" k-data-source="issueDataSource" k-rebind="issueOptions"></div>
-                  
-                  
+                  <div kendo-grid="issueDataGrid" k-options="issueOptions" k-data-source="issueDataSource" k-rebind="issueOptions"></div>  
                </div>
                <button id="addIssue" type="button" class="btn btn-sm btn-primary" ng-click="addIssueRow()">Add Issue</button>
-               
-              
             </div>
          </div>
       </div>

@@ -9,10 +9,10 @@
 angular.module('sbAdminApp')
     .controller('TableCtrl',
         function($scope, $timeout) {
-            $scope.tableEdit = false;
             $scope.onChangeHandler = function() {
                 $scope.fpyDataGrid.refresh();
                 $scope.issueDataGrid.refresh();
+                $scope.fourMDataGrid.refresh();
             }
 
             $scope.flagEditShow = false;
@@ -28,31 +28,6 @@ angular.module('sbAdminApp')
                 target: '6',
                 acheived: '6'
             };
-            $scope.data4Ms = [{
-                id: 100,
-                item: 'Man',
-                yesterday: 'Mark',
-                today: 'Otto',
-                remarks: '@modo'
-            }, {
-                id: 110,
-                item: 'Material',
-                yesterday: 'jacob',
-                today: 'thornton',
-                remarks: '@fat'
-            }, {
-                id: 120,
-                item: 'Machine',
-                yesterday: 'larry',
-                today: 'the bird',
-                remarks: '@twitter'
-            }, {
-                id: 130,
-                item: 'Method',
-                yesterday: 'larry',
-                today: 'the bird',
-                remarks: '@twitter'
-            }];
 
             function initFPYTable() {
                 //Ideally Data should come from 
@@ -153,6 +128,80 @@ angular.module('sbAdminApp')
                         field: "remarks",
                         title: "Remarks",
                         // width: 15
+                    }],
+                    editable: false,
+                    save: $scope.onChangeHandler
+                };
+            }
+
+            function initFourMTable() {
+                $scope.fourMDataSource = new kendo.data.DataSource({
+                    data: [{
+                        id: 1,
+                        item: 'Man',
+                        yesterday: 'Mark',
+                        today: 'Otto',
+                        remarks: '@modo'
+                    }, {
+                        id: 2,
+                        item: 'Material',
+                        yesterday: 'jacob',
+                        today: 'thornton',
+                        remarks: '@fat'
+                    }, {
+                        id: 3,
+                        item: 'Machine',
+                        yesterday: 'larry',
+                        today: 'the bird',
+                        remarks: '@twitter'
+                    }, {
+                        id: 4,
+                        item: 'Method',
+                        yesterday: 'larry',
+                        today: 'the bird',
+                        remarks: '@twitter'
+                    }],
+                    schema: {                        
+                        model: {
+                            id: "id",
+                            fields: {
+                                item: {
+                                    type: "string",
+                                    editable: true
+                                },
+                                yesterday: {
+                                    type: "string",
+                                    editable: true
+                                },
+                                today: {
+                                    type: "string",
+                                    editable: true
+                                },
+                                remarks: {
+                                    type: "string",
+                                    editable: true
+                                }
+                            }
+                        }
+                    }
+                });
+                $scope.fourMOptions = {                    
+                    columns: [{
+                        field: "item",
+                        title: "#",
+                        // width: 15
+                    }, {
+                        field: "yesterday",
+                        title: "Yesterday",
+                        // width: 10
+                    }, {
+                        field: "today",
+                        title: "Today",
+                        // width: 10
+                    }, {
+                        field: "remarks",
+                        title: "Remarks",
+                        // width: 10
                     }],
                     editable: false,
                     save: $scope.onChangeHandler
@@ -269,6 +318,7 @@ angular.module('sbAdminApp')
 
             function initTableData() {
                 initFPYTable();
+                initFourMTable();
                 initIssueTrackerTable();
 
             }
@@ -319,26 +369,13 @@ angular.module('sbAdminApp')
                     obj.attr("readOnly", false);
                 }
 
-                // 2. weekly fpy
-                // do sth here
-
-                // 3. 4M status table 
-                for (var i = 0; i < $scope.data4Ms.length; i++) {
-                    for (var id = $scope.data4Ms[i].id; id < $scope.data4Ms[i].id + 4; id++) {
-                        var obj = $("#" + id);
-                        obj.attr("readOnly", false);
-                    }
-                }
-
-                // 4. issue tracking
-                // do sth here
-
                 // flag
                 $scope.flagEditShow = !$scope.flagEditShow;
                 $scope.flagDoneShow = !$scope.flagDoneShow;
 
                 $scope.sampleOptions.editable = $scope.flagEditShow;
                 $scope.issueOptions.editable = $scope.flagEditShow;
+                $scope.fourMOptions.editable = $scope.flagEditShow;
                 $timeout(function() {
                     $scope.fpyDataGrid.refresh();
                     $scope.issueDataGrid.refresh();
@@ -356,20 +393,6 @@ angular.module('sbAdminApp')
                     var obj = $("#" + id);
                     obj.attr("readOnly", true);
                 }
-
-                // 2. weekly fpy
-                // do sth here
-
-                // 3. 4M status table    
-                for (var i = 0; i < $scope.data4Ms.length; i++) {
-                    for (var id = $scope.data4Ms[i].id; id < $scope.data4Ms[i].id + 4; id++) {
-                        var obj = $("#" + id);
-                        obj.attr("readOnly", true);
-                    }
-                }
-
-                // 4. issue tracking
-                // do sth here
 
                 // flag
                 $scope.flagEditShow = !$scope.flagEditShow;
