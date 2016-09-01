@@ -309,6 +309,21 @@ angular.module('sbAdminApp')
                         field: "status",
                         title: "Staus",
                         // width: 15
+                    }, {
+                        command: [{
+                            name: "Delete",
+                            imageClass: "k-icon k-i-close",
+                            click: function(e) {
+                                e.preventDefault();
+                                var dataItem = this.dataItem($(e.target).closest("tr"));
+                                if (confirm('Do you really want to delete this record?')) {
+                                    $scope.issueDataSource.remove(dataItem);
+                                    $scope.issueDataSourcedataSource.sync();
+                                }
+                            }
+                        }],
+                        title: "&nbsp;",
+                        width: "100px"
                     }],
                     editable: false,
                     save: $scope.onChangeHandler
