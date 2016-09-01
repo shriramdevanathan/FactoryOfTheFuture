@@ -1,0 +1,14 @@
+ <div ng-init="callOnce()" ng-controller="ManpowerCtrl" >
+   <div class="row ng-scope" >
+      <div class="col-lg-12" >
+         <div class="panel panel-info" >
+            <div class="panel-heading" ><span class="panel-title" ><b >Manpower</b></span></div>
+            <div class="panel-body">
+                  <span > </span><span > </span><span > </span><span > </span><span > </span><span > </span><span > </span>
+                  <div id="manpowerGrid" kendo-grid="manpowerDataGrid" k-options="manpowerOptions" k-data-source="dataSourceManpower"></div>
+                  <button id="addButton" ng-click="addRow()" class="btn btn-primary btn-sm" align = "left">Add New Manpower</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div> 

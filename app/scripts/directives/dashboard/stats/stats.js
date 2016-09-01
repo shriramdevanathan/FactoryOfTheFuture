@@ -12,6 +12,9 @@ angular.module('sbAdminApp')
             templateUrl: 'scripts/directives/dashboard/stats/stats.html',
             restrict: 'E',
             replace: true,
+            link: function(scope, iElement, iAttrs) {
+
+            },
             scope: {
                 'model': '=',
                 'comments': '@',
@@ -24,7 +27,9 @@ angular.module('sbAdminApp')
                 'supervisor': '@',
                 'linelead': '@',
                 'removeflag': '=',
-                'removeinstrument': '&'
+                'removeInstrument': '&',
+                'clickInstrument': '&',
+                'editInstrument': '&'
             }
 
         }

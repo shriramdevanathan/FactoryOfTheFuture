@@ -114,6 +114,20 @@ angular
                     }
 
                 })
+                .state('dashboard.manpower', {
+                    templateUrl: 'views/manpower.html',
+                    url: '/manpower',
+                    controller: 'ManpowerCtrl',
+                    resolve: {
+                        loadMyFile: function($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                name: 'sbAdminApp',
+                                files: ['scripts/controllers/manpowerController.js']
+                            })
+                        }
+                    }
+
+                })
                 .state('dashboard.chart', {
                     templateUrl: 'views/chart.html',
                     url: '/chart',

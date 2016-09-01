@@ -1,10 +1,9 @@
-<div style="cursor:pointer" class="col-lg-2 col-md-6">
+<div  class="col-lg-2 col-md-6">
     <div ng-show="type==='comments'" class="panel panel-{{colour}}">
-        <div class="panel-heading">
+        <div style="cursor:pointer" ng-click="clickInstrument()"  class="panel-heading">
             <div class="row">
-                <span ng-show="removeflag===true" class="glyphicon glyphicon-minus close-icon"></span>
+                <!-- <span ng-show="removeflag===true" class="glyphicon glyphicon-minus close-icon"></span> -->
                 <div class="col-xs-2">
-                    <!-- <i class="fa fa-{{type}} fa-5x"></i> -->
                     <img src="../../../../assets/instrument-lg.png"/>
                 </div>
                 <div class="col-xs-10 text-right">
@@ -14,9 +13,44 @@
             </div>
         </div>
         <div class="panel-footer">
-                <span>Line Lead: {{linelead}}</span>
-                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                <div>Supervisor: {{supervisor}}</div>
+                <span>
+                    <span>
+                        <!-- <div class="container"> -->
+                          <div class="row">
+                            <div class="col-lg-4 text-label-stat font-span">
+                              Line Lead:
+                            </div>
+                            <div class="col-lg-6 text-value-stat font-span">
+                              {{linelead}}
+                            </div>
+                            <div ng-click="editInstrument()" class="col-lg-2 text-icon-stat" style="cursor:pointer">
+                              <i class="fa fa-pencil-square-o fa-lg"></i>
+                            </div>
+                          </div>
+                        <!-- </div> -->
+                        
+                       <!--  <span>Line Lead:</span>
+                        <span> {{linelead}}</span> -->
+                    </span>
+                    <!-- <span class="pull-right"><i class="fa fa-pencil-square-o fa-lg"></i></span> -->
+                </span>
+                
+                <span>
+                    <span>
+                        <div class="row">
+                            <div class="col-lg-4 text-label-stat font-span">
+                              Supervisor:
+                            </div>
+                            <div class="col-lg-6 text-value-stat font-span">
+                              {{supervisor}}
+                            </div>
+                            <div ng-click="removeInstrument()" style="cursor:pointer" class="col-lg-2 text-icon-stat">
+                              <i class="fa fa-trash-o fa-lg" style="margin-right:3px;"></i>
+                            </div>
+                          </div>
+                    </span>
+                    
+                </span>
                 <div class="clearfix"></div>
         </div>
     </div>
