@@ -329,6 +329,9 @@ table.dataTable thead .sorting:after {
 .panel-green {
     border-color: #5cb85c;
 }
+.padding-instrument-footer{
+    padding:21px 22px;
+}
 .close-icon{
     position: absolute;
     top: 2px;

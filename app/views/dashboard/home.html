@@ -16,42 +16,49 @@
              <stats ng-repeat="obj in instrumentObjArr" click-instrument="clickInstrument(obj)" number="{{obj.instrumentName}}" removeflag="removeflag" remove-instrument="removeInstrument(obj.id)" edit-instrument="editInstrument(obj.id)" comments="{{obj.comments}}" colour="{{obj.colour}}" linelead="{{obj.linelead}}" supervisor="{{obj.supervisor}}" type="{{obj.type}}">
     </div>
 
-     <div kendo-window="winEditCell" k-title="'Edit Cell'" k-on-open="win1visible = true" k-on-close="win1visible = false" k-visible="false" k-resizable="false" k-draggable="false"  k-width="500" k-height="220" k-modal="true">
+     <div kendo-window="winEditCell" k-title="'Edit Cell'" k-on-open="win1visible = true" k-on-close="win1visible = false" k-visible="false" k-resizable="false" k-draggable="false"  k-width="500"  k-modal="true">
             <div class="padding-kendo-form">
                 <div class="col-lg-4">
-                    <label class="pull-right">Label 1:</label>
+                    <label class="pull-right">Instrument Name:</label>
                 </div>
                 <div class="col-lg-4">
-                    <input type="text" value="val"></input>
+                    <input type="text" ng-model="instrumentObjArr[idn].instrumentName"></input>
                 </div>
             </div>
             <div class="padding-kendo-form">
                 <div class="col-lg-4">
-                    <label class="pull-right">Label 2:</label>
+                    <label class="pull-right">Line Lead:</label>
                 </div>
                 <div class="col-lg-4">
-                    <input type="text" value="val"></input>
+                    <input type="text" ng-model="instrumentObjArr[idn].linelead"></input>
                 </div>
             </div>
             <div class="padding-kendo-form">
           
                 <div class="col-lg-4">
-                    <label class="pull-right">Label 3:</label>
+                    <label class="pull-right">Supervisor:</label>
                 </div>
                 <div class="col-lg-4">
-                    <input type="text" value="val"></input>
+                    <input type="text" ng-model="instrumentObjArr[idn].supervisor"></input>
                 </div>
             </div>
             <div class="padding-kendo-form">
-                <div class="col-lg-4">
-                    <label class="pull-right">Label 4:</label>
+                <div class="col-lg-4" style="margin-top:20px">
+                    <label class="pull-right">Image :</label>
                 </div>
                 <div class="col-lg-4">
-                    <input type="text" value="val"></input>
+                    <input name="files"
+                        type="file"
+                        kendo-upload
+                        k-async="{ saveUrl: 'save', removeUrl: 'remove', autoUpload: true }"
+                        k-select="onSelect"
+                    />
                 </div>
             </div>
-            <div class="pull-right">
-                <button class="btn btn-primary">Save</button>
+            <div class="padding-kendo-form">
+                <div class="pull-right">
+                    <button ng-click="saveAndCloseWin()" class="btn btn-primary">Save</button>
+                </div>
             </div>
            
             

@@ -175,9 +175,26 @@ angular.module('sbAdminApp')
             });
         };
 
-        $scope.editInstrument = function() {
+        $scope.editInstrument = function(id) {
+            for (var i in $scope.instrumentObjArr) {
+                if (id === $scope.instrumentObjArr[i].id) {
+                    $scope.idn = i;
+                    break;
+                }
+            }
+
             $scope.winEditCell.center().open();
         }
+        $scope.saveAndCloseWin = function() {
+            //Save
+            $scope.winEditCell.close();
+        }
+        $scope.onSelect = function(e) {
+            var message = $.map(e.files, function(file) {
+                return file.name;
+            }).join(", ");
+            kendoConsole.log("event :: select (" + message + ")");
+        };
 
         function getHighestId() {
             var id = -1;
