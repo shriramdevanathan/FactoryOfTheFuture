@@ -330,7 +330,11 @@ table.dataTable thead .sorting:after {
     border-color: #5cb85c;
 }
 .padding-instrument-footer{
-    padding:21px 22px;
+    padding-top:10px;
+    padding-right: 22px;
+    padding-left: 22px;
+    padding-bottom:21px;
+
 }
 .close-icon{
     position: absolute;
