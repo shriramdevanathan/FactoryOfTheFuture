@@ -128,6 +128,21 @@ angular.module('sbAdminApp')
                         field: "remarks",
                         title: "Remarks",
                         // width: 15
+                    }, {
+                        command: [{
+                            name: "Delete",
+                            imageClass: "k-icon k-i-close",
+                            click: function(e) {
+                                e.preventDefault();
+                                var dataItem = this.dataItem($(e.target).closest("tr"));
+                                // if (confirm('Do you really want to delete this record?')) {
+                                $scope.dataSourceSample.remove(dataItem);
+                                $scope.dataSourceSample.sync();
+                                // }
+                            }
+                        }],
+                        title: "&nbsp;",
+                        width: "100px"
                     }],
                     editable: false,
                     save: $scope.onChangeHandler
@@ -316,10 +331,10 @@ angular.module('sbAdminApp')
                             click: function(e) {
                                 e.preventDefault();
                                 var dataItem = this.dataItem($(e.target).closest("tr"));
-                                if (confirm('Do you really want to delete this record?')) {
-                                    $scope.issueDataSource.remove(dataItem);
-                                    $scope.issueDataSourcedataSource.sync();
-                                }
+                                //  if (confirm('Do you really want to delete this record?')) {
+                                $scope.issueDataSource.remove(dataItem);
+                                $scope.issueDataSource.sync();
+                                //  }
                             }
                         }],
                         title: "&nbsp;",
@@ -412,6 +427,8 @@ angular.module('sbAdminApp')
                 // flag
                 $scope.flagEditShow = !$scope.flagEditShow;
                 $scope.flagDoneShow = !$scope.flagDoneShow;
+                $scope.fpyDataGrid.refresh();
+                $scope.issueDataGrid.refresh();
                 $timeout(function() {
                     initTableData();
                     $scope.$apply();
