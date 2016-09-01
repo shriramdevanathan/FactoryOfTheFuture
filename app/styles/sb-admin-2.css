@@ -302,8 +302,29 @@ table.dataTable thead .sorting:after {
 .font-relative {
     font-size: 0.8vw;
 }
+.font-span {
+    font-size: 15px;
+}
 .padding-top-row{
     padding-top:10px;
+}
+.text-label-stat{
+    text-align: right;
+    padding: 0px;
+}
+.text-value-stat{
+    text-align: left;
+    padding-left: 10px;
+}
+.text-icon-stat{
+    text-align: right;
+    padding-right: 5px
+}
+.padding-kendo-form{
+    padding:20px;
+}
+.k-window{
+    text-align:center;
 }
 .panel-green {
     border-color: #5cb85c;

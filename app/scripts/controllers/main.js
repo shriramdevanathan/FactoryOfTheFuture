@@ -8,8 +8,6 @@
  */
 angular.module('sbAdminApp')
     .controller('MainCtrl', function($scope, $position, $state, $timeout) {
-        $scope.removeflag = false;
-
         var instrumentName1 = "QuantStudio Q3 & Q5";
         var instrumentName2 = "ViiA 7";
         var instrumentName3 = "7500 Fast";
@@ -175,6 +173,10 @@ angular.module('sbAdminApp')
             $timeout(function() {
                 $scope.$apply();
             });
+        };
+
+        $scope.editInstrument = function() {
+            $scope.winEditCell.center().open();
         }
 
         function getHighestId() {
