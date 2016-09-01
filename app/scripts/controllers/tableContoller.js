@@ -14,6 +14,14 @@ angular.module('sbAdminApp')
                 $scope.issueDataGrid.refresh();
             }
 
+            $scope.flagEditShow = true;
+            $scope.flagDoneShow = false;
+            $scope.outputDaily = {id:10, target:'6', yesterday:'6', today:'6'};
+            $scope.outputCummulative = {id:20, target:'6', acheived:'6'};
+            $scope.data4Ms = [{id:100, item:'Man', yesterday:'Mark', today:'Otto', remarks:'@modo'},
+                            {id:110, item:'Material', yesterday:'jacob', today:'thornton', remarks:'@fat'},
+                            {id:120, item:'Machine', yesterday:'larry', today:'the bird', remarks:'@twitter'},
+                            {id:130, item:'Method', yesterday:'larry', today:'the bird', remarks:'@twitter'}];
 
             function initFPYTable() {
                 //Ideally Data should come from 
@@ -267,6 +275,67 @@ angular.module('sbAdminApp')
                 $scope.dataSourceSample.sync();
 
             }
+
+            $scope.editTable = function(){
+            // 1. output status 
+            for (var id = $scope.outputDaily.id; id < $scope.outputDaily.id+3; id++){
+                var obj = $("#"+id);  
+                obj.attr("readOnly",false);
+                }     
+            for (var id = $scope.outputCummulative.id; id < $scope.outputCummulative.id+3; id++){
+                var obj = $("#"+id);  
+                obj.attr("readOnly",false);
+                }   
+
+            // 2. weekly fpy
+            // do sth here
+
+            // 3. 4M status table 
+              for(var i=0; i<$scope.data4Ms.length; i++){  
+                for (var id = $scope.data4Ms[i].id; id < $scope.data4Ms[i].id+4; id++){
+                    var obj = $("#"+id);  
+                    obj.attr("readOnly",false);
+                    }      
+                } 
+
+            // 4. issue tracking
+            // do sth here
+
+            // flag
+            $scope.flagEditShow = !$scope.flagEditShow;
+            $scope.flagDoneShow = !$scope.flagDoneShow;
+            }
+
+            $scope.editDone = function(){
+            // 1. output status 
+            for (var id = $scope.outputDaily.id; id < $scope.outputDaily.id+3; id++){
+                var obj = $("#"+id);  
+                obj.attr("readOnly",true);
+                }  
+            for (var id = $scope.outputCummulative.id; id < $scope.outputCummulative.id+3; id++){
+                var obj = $("#"+id);  
+                obj.attr("readOnly",true);
+                }  
+
+            // 2. weekly fpy
+            // do sth here
+
+            // 3. 4M status table    
+              for(var i=0; i<$scope.data4Ms.length; i++){  
+                for (var id = $scope.data4Ms[i].id; id < $scope.data4Ms[i].id+4; id++){
+                    var obj = $("#"+id);  
+                    obj.attr("readOnly",true);
+                    }      
+                } 
+
+            // 4. issue tracking
+            // do sth here
+
+            // flag
+            $scope.flagEditShow = !$scope.flagEditShow;
+            $scope.flagDoneShow = !$scope.flagDoneShow;
+            }
+
             $scope.callOnce = function() {
 
             };
