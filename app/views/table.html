@@ -13,7 +13,7 @@
       </div>
    </div>
    <div class="row" >
-      <div class="col-lg-4" >
+      <div class="col-lg-6" >
          <div class="panel panel-info" >
             <div class="panel-heading" ><span class="panel-title" ><b >Target FPY &gt;= 90%</b></span></div>
             <div class="panel-body" >
@@ -29,7 +29,7 @@
             </div>
          </div>
       </div>
-       <div class="col-lg-8" >
+       <div class="col-lg-6" >
          <div class="panel panel-info" >
             <div class="panel-heading" ><span class="panel-title" ><b >Current FPY = 93%</b></span></div>
             <div class="panel-body" >
@@ -37,16 +37,18 @@
                <div class="col-lg-6" >
                   <div class="well" >
                      <h5 ><b ><u >Daily Status</u></b></h5>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Target : </span><span ><input type="text" id='{{outputDaily.id}}' ng-model="outputDaily.target" class="inactive" readonly /> </span></div>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Yesterday : </span><span ><input type="text" id='{{outputDaily.id+1}}' ng-model="outputDaily.yesterday" class="inactive" readonly /></span></div>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Today : </span><span ><input type="text" id='{{outputDaily.id+2}}' ng-model="outputDaily.today" class="inactive" readonly /></span></div>
+                     <div class="row" ><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > Target : </span></div><div class="col-lg-6"><span ><input type="text" id='{{outputDaily.id}}' ng-model="outputDaily.target" class="inactive" readonly /> </span></div></div>
+
+
+                     <div class="row" style="margin-top:20px;"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > Yesterday : </span></div><div class="col-lg-6"><span ><input type="text" id='{{outputDaily.id+1}}' ng-model="outputDaily.yesterday" class="inactive" readonly /></span></div></div>
+                     <div  class="row" style="margin-top:20px;"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > Today : </span></div><div class="col-lg-6"><span ><input type="text" id='{{outputDaily.id+2}}' ng-model="outputDaily.today" class="inactive" readonly /></span></div></div>
                   </div>
                </div>
                <div class="col-lg-6" >
                   <div class="well" >
                      <h5 ><b ><u >Cummulative</u></b></h5>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Monthly Target : </span><span ><input type="text" id='{{outputCummulative.id}}' ng-model="outputCummulative.target" class="inactive" readonly /></span></div>
-                     <div ><i class="fa fa-hand-o-right  " ></i><span > Acheived : </span><span ><input type="text" id='{{outputCummulative.id+1}}' ng-model="outputCummulative.acheived" class="inactive" readonly /></span></div>
+                     <div class="row" ><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > Monthly Target : </span></div><div class="col-lg-6"><span ><input type="text" id='{{outputCummulative.id}}' ng-model="outputCummulative.target" class="inactive" readonly /></span></div></div>
+                     <div class="row" style="margin-top:20px;"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > Acheived : </span></div><div class="col-lg-6"><span ><input type="text" id='{{outputCummulative.id+1}}' ng-model="outputCummulative.acheived" class="inactive" readonly /></span></div></div>
                   </div>
                </div>
             </div>
