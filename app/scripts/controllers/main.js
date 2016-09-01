@@ -148,10 +148,10 @@ angular.module('sbAdminApp')
         };
         $scope.addInstrument = function() {
             $scope.instrumentObjArr.push({
-                instrumentName: "Step One & Step One Plus",
+                instrumentName: "Sample Instrument",
                 comments: "",
                 colour: "green",
-                linelead: "Shriram",
+                linelead: "Admin",
                 supervisor: "Lian Seng",
                 type: "comments",
                 id: getHighestId()
@@ -193,7 +193,7 @@ angular.module('sbAdminApp')
             var message = $.map(e.files, function(file) {
                 return file.name;
             }).join(", ");
-            kendoConsole.log("event :: select (" + message + ")");
+            console.log("event :: select (" + message + ")");
         };
 
         function getHighestId() {

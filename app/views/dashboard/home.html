@@ -16,7 +16,7 @@
              <stats ng-repeat="obj in instrumentObjArr" click-instrument="clickInstrument(obj)" number="{{obj.instrumentName}}" removeflag="removeflag" remove-instrument="removeInstrument(obj.id)" edit-instrument="editInstrument(obj.id)" comments="{{obj.comments}}" colour="{{obj.colour}}" linelead="{{obj.linelead}}" supervisor="{{obj.supervisor}}" type="{{obj.type}}">
     </div>
 
-     <div kendo-window="winEditCell" k-title="'Edit Cell'" k-on-open="win1visible = true" k-on-close="win1visible = false" k-visible="false" k-resizable="false" k-draggable="false"  k-width="500"  k-modal="true">
+     <div style="display:none" kendo-window="winEditCell" k-title="'Edit Cell'" k-on-open="win1visible = true" k-on-close="win1visible = false" k-visible="false" k-resizable="false" k-draggable="false"  k-width="500"  k-modal="true">
             <div class="padding-kendo-form">
                 <div class="col-lg-4">
                     <label class="pull-right">Instrument Name:</label>
