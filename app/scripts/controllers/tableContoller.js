@@ -176,7 +176,7 @@ angular.module('sbAdminApp')
                         today: 'the bird',
                         remarks: '@twitter'
                     }],
-                    schema: {                        
+                    schema: {
                         model: {
                             id: "id",
                             fields: {
@@ -200,7 +200,7 @@ angular.module('sbAdminApp')
                         }
                     }
                 });
-                $scope.fourMOptions = {                    
+                $scope.fourMOptions = {
                     columns: [{
                         field: "item",
                         title: "#",
@@ -427,10 +427,8 @@ angular.module('sbAdminApp')
                 // flag
                 $scope.flagEditShow = !$scope.flagEditShow;
                 $scope.flagDoneShow = !$scope.flagDoneShow;
-                $scope.fpyDataGrid.refresh();
-                $scope.issueDataGrid.refresh();
                 $timeout(function() {
-                    initTableData();
+                    // initTableData();
                     $scope.$apply();
 
                 });
