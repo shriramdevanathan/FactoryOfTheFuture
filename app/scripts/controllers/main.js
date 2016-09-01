@@ -9,9 +9,15 @@
 angular.module('sbAdminApp')
     .controller('MainCtrl', function($scope, $position, $state, $timeout) {
         $scope.removeflag = false;
+
+        var instrumentName1 = "QuantStudio Q3 & Q5";
+        var instrumentName2 = "ViiA 7";
+        var instrumentName3 = "7500 Fast";
+        var instrumentName4 = "Step One & Step One Plus";
+
         $scope.instrumentObjArr = [{
             id: 1,
-            instrumentName: "QuantStudio Q3 & Q5",
+            instrumentName: instrumentName1,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -19,7 +25,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 2,
-            instrumentName: "ViiA 7",
+            instrumentName: instrumentName2,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -27,7 +33,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 3,
-            instrumentName: "7500 Fast",
+            instrumentName: instrumentName3,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -35,7 +41,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 4,
-            instrumentName: "ViiA 7",
+            instrumentName: instrumentName2,
             comments: "",
             colour: "yellow",
             linelead: "Shriram",
@@ -43,7 +49,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 5,
-            instrumentName: "7500 Fast",
+            instrumentName: instrumentName3,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -51,7 +57,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 6,
-            instrumentName: "Step One & Step One Plus",
+            instrumentName: instrumentName4,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -59,23 +65,15 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 7,
-            instrumentName: "QuantStudio Q3 & Q5",
+            instrumentName: instrumentName1,
             comments: "",
             colour: "red",
             linelead: "Shriram",
             supervisor: "Michael",
             type: "comments"
         }, {
-            id: 15,
-            instrumentName: "ViiA 7",
-            comments: "",
-            colour: "green",
-            linelead: "Shriram",
-            supervisor: "Michael",
-            type: "comments"
-        }, {
             id: 8,
-            instrumentName: "7500 Fast",
+            instrumentName: instrumentName3,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -83,7 +81,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 9,
-            instrumentName: "ViiA 7",
+            instrumentName: instrumentName2,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -91,7 +89,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 10,
-            instrumentName: "7500 Fast",
+            instrumentName: instrumentName3,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -99,7 +97,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 11,
-            instrumentName: "Step One & Step One Plus",
+            instrumentName: instrumentName4,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -107,7 +105,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 12,
-            instrumentName: "ViiA 7",
+            instrumentName: instrumentName2,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -115,7 +113,7 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 13,
-            instrumentName: "7500 Fast",
+            instrumentName: instrumentName3,
             comments: "",
             colour: "green",
             linelead: "Shriram",
@@ -123,9 +121,17 @@ angular.module('sbAdminApp')
             type: "comments"
         }, {
             id: 14,
-            instrumentName: "Step One & Step One Plus",
+            instrumentName: instrumentName4,
             comments: "",
             colour: "yellow",
+            linelead: "Shriram",
+            supervisor: "Michael",
+            type: "comments"
+        }, {
+            id: 15,
+            instrumentName: instrumentName2,
+            comments: "",
+            colour: "green",
             linelead: "Shriram",
             supervisor: "Michael",
             type: "comments"
@@ -149,7 +155,8 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Lian Seng",
-                type: "comments"
+                type: "comments",
+                id: getHighestId()
             });
             $timeout(function() {
                 $scope.$apply();
@@ -168,5 +175,15 @@ angular.module('sbAdminApp')
             $timeout(function() {
                 $scope.$apply();
             });
+        }
+
+        function getHighestId() {
+            var id = -1;
+            for (var i in $scope.instrumentObjArr) {
+                if ($scope.instrumentObjArr[i].id > id) {
+                    id = $scope.instrumentObjArr[i].id;
+                }
+            }
+            return id + 1;
         }
     });
