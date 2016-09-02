@@ -26,16 +26,17 @@
       <div class="col-lg-6" >
          <div class="panel panel-info" >
             <div class="panel-heading" ><span class="panel-title" ><b >Target FPY &gt;= 90%</b></span></div>
-            <div class="panel-body" >
-               <h4 >Business Case</h4>
-               <h5 ><span > </span><b ><u >Our Mission</u></b></h5>
-               <p >Together we design,build and deliver innovative solutions and exceptioal services to create ultimate customer experience</p>
+            <div class="panel-body">
+               <div class="row" align="center"><font size="2"><b >Business Case</b></font></div>
+               <div class="row" style="margin-top:20px;margin-left:20px;margin-bottom=20px;"><font size="2"><u >Our Mission</u></font></div>
+               <div style="margin-top:20px;margin-left:20px"><p >Together we design,build and deliver innovative solutions and exceptioal services to create ultimate customer experience</p>
                <div ><span > </span><i class="fa fa-hand-o-right" ></i><span >   Meet Daily Output Target </span></div>
                <div ><span > </span><i class="fa fa-hand-o-right" ></i><span >   OQA = 100% Acceptance </span></div>
                <div ><span > </span><i class="fa fa-hand-o-right" ></i><span >   FPY &gt;= 90%</span></div>
                <div ><span > </span><i class="fa fa-hand-o-right" ></i><span >   Gemba Walk (Observe,Engage,Improve)</span></div>
                <div ><span > </span><i class="fa  fa-hand-o-right" ></i><span >   No Safety Issue</span></div>
-               <div ><span > </span><i class="fa  fa-hand-o-right" ></i><span >   Good 5S</span></div>
+               <div style="margin-bottom:22px;"><span > </span><i class="fa  fa-hand-o-right" ></i><span >   Good 5S</span></div>
+               </div>
             </div>
          </div>
       </div>
@@ -43,10 +44,10 @@
          <div class="panel panel-info" >
             <div class="panel-heading" ><span class="panel-title" ><b >Current FPY = 93%</b></span></div>
             <div class="panel-body" >
-               <h4 >Output Status</h4>
+               <div align="center" style="margin-bottom:20px;"><font size="2"><b >Output Status</b></font></div>
                <div class="col-lg-6" >
                   <div class="well" >
-                     <h5 ><b ><u >Daily Status</u></b></h5>
+                     <font size="2"><b ><u >Daily Status</u></b></font>
                      <div class="row"  style="margin-top:20px;" ng-show="flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > <font size="2">Target : </font></span></div><div class="col-lg-6"><span ><input type="text" id='{{outputDaily.id}}' ng-model="outputDaily.target" class="inactive" readonly /> </span></div></div>
                       <div class="row" style="margin-top:20px;" ng-show="!flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > <font size="2">Target :</font> </span></div><div class="col-lg-6"><span ><font size="2"><label ng-bind="outputDaily.target" /> </font></span></div></div>
                      
@@ -61,7 +62,7 @@
                </div>
                <div class="col-lg-6" >
                   <div class="well" >
-                     <h5 ><b ><u >Cummulative - Monthly</u></b></h5>
+                     <font size="2"><b ><u >Cummulative - Monthly</u></b></font>
                      <div class="row" style="margin-top:20px;" ng-show = "flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span ><font size="2"> Target : </font></span></div><div class="col-lg-6"><span ><input type="text" id='{{outputCummulative.id}}' ng-model="outputCummulative.target" class="inactive" readonly/></span></div></div>
                     <div class="row" style="margin-top:20px;" ng-show = "!flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span ><font size="2">Target : </font></span></div><div class="col-lg-6"><span ><font size="2"><label ng-bind="outputCummulative.target" backgroun/></font></span></div></div>
 
