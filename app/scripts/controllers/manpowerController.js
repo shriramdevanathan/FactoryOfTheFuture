@@ -471,7 +471,8 @@ angular.module('sbAdminApp')
                         // width: 15
                     }],
                     editable: true,
-                    save: $scope.onChangeHandler
+                    save: $scope.onChangeHandler,
+                    rowTemplate: '<tr class="#:name==\"Days\"? \"yellow\" : \"white\"#" data-uid="#= uid #"><td><a class="k-grid-delete" href="\\#"><span class="k-icon k-delete"></span>Remove</a></td><td>#: name #</td><td>#:day1 #</td><td>#:day2 #</td><td>#:day3 #</td><td>#:day4 #</td><td>#:day5 #</td><td>#:day6 #</td><td>#:day7 #</td><td>#:day8 #</td><td>#:day9 #</td><td>#:day10 #</td><td>#:day11 #</td><td>#:day12 #</td><td>#:day13 #</td><td>#:day14 #</td><td>#:day15 #</td><td>#:day16 #</td><td>#:day17 #</td><td>#:day18 #</td><td>#:day19 #</td><td>#:day20 #</td><td>#:day21 #</td><td>#:day22 #</td><td>#:day23 #</td><td>#:day24 #</td><td>#:day25 #</td><td>#:day26 #</td><td>#:day27 #</td><td>#:day28 #</td><td>#:day29 #</td><td>#:day30 #</td><td>#:day31 #</td></tr>'
                 };
             }
 
