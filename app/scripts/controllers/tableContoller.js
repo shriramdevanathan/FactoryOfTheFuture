@@ -174,20 +174,20 @@ angular.module('sbAdminApp')
                     data: [{
                         id: 1,
                         item: 'Man',
-                        yesterday: 'green',
+                        yesterday: 'red',
                         today: 'green',
                         remarks: '@modo'
                     }, {
                         id: 2,
                         item: 'Material',
-                        yesterday: 'green',
+                        yesterday: 'yellow',
                         today: 'green',
                         remarks: '@fat'
                     }, {
                         id: 3,
                         item: 'Machine',
                         yesterday: 'yellow',
-                        today: 'yellow',
+                        today: 'green',
                         remarks: '@twitter'
                     }, {
                         id: 4,
