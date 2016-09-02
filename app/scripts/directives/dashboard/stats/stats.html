@@ -1,10 +1,10 @@
-<div  class="col-lg-2 col-md-6">
+<div  class="col-lg-3 col-md-6">
     <div ng-show="type==='comments'" class="panel panel-{{colour}}">
         <div style="cursor:pointer" ng-click="clickInstrument()"  class="panel-heading">
             <div class="row">
                 <!-- <span ng-show="removeflag===true" class="glyphicon glyphicon-minus close-icon"></span> -->
                 <div class="col-xs-2">
-                    <img src="../../../../assets/instrument-lg.png"/>
+                    <img class="instrument-logo" src="../../../../assets/instrument-lg.png"/>
                 </div>
                 <div class="col-xs-10 text-right">
                     <div class="font-relative">{{number}}</div>
@@ -17,10 +17,10 @@
                     <span>
                         <!-- <div class="container"> -->
                           <div class="row">
-                            <div  class="col-lg-4 text-label-stat font-span">
+                            <div  class="col-lg-5 text-label-stat font-span">
                               Line Lead:
                             </div>
-                            <div class="col-lg-6 text-value-stat font-span">
+                            <div class="col-lg-5 text-value-stat font-span">
                               {{linelead}}
                             </div>
                             <div   ng-click="editInstrument()" class="col-lg-2 text-icon-stat" style="cursor:pointer">
@@ -38,10 +38,10 @@
                 <span>
                     <span>
                         <div class="row">
-                            <div class="col-lg-4 text-label-stat font-span">
+                            <div class="col-lg-5 text-label-stat font-span">
                               Supervisor:
                             </div>
-                            <div  class="col-lg-6 text-value-stat font-span">
+                            <div  class="col-lg-5 text-value-stat font-span">
                               {{supervisor}}
                             </div>
                             <div ng-click="removeInstrument()" style="cursor:pointer" class="col-lg-2 text-icon-stat">

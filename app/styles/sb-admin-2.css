@@ -300,7 +300,8 @@ table.dataTable thead .sorting:after {
 }
 
 .font-relative {
-    font-size: 0.8vw;
+    /*font-size: 0.9vw;*/
+    font-size: 12px;
 }
 .font-span {
     font-size: 15px;
@@ -325,6 +326,9 @@ table.dataTable thead .sorting:after {
 }
 .k-window{
     text-align:center;
+}
+.instrument-logo{
+    width:2vw;
 }
 .panel-green {
     border-color: #5cb85c;
