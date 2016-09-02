@@ -55,37 +55,37 @@ angular.module('sbAdminApp')
                     data: [{
                         "id": 1,
                         "products": "QS3 0.2 ml",
-                        "week1": "5",
-                        "week2": "5",
-                        "week3": "4",
-                        "week4": "6",
+                        "week1": "95",
+                        "week2": "95",
+                        "week3": "94",
+                        "week4": "96",
                         "remarks": "Achieved"
 
                     }, {
                         "id": 2,
                         "products": "QS3 0.6 ml",
-                        "week1": "13",
-                        "week2": "14",
-                        "week3": "6",
-                        "week4": "11",
+                        "week1": "93",
+                        "week2": "94",
+                        "week3": "96",
+                        "week4": "91",
                         "remarks": "Ahead"
 
                     }, {
                         "id": 3,
                         "products": "QS5 0.2 ml",
-                        "week1": "1",
-                        "week2": "2",
-                        "week3": "4",
-                        "week4": "4",
+                        "week1": "81",
+                        "week2": "92",
+                        "week3": "94",
+                        "week4": "84",
                         "remarks": "Behind"
 
                     }, {
                         "id": 2,
                         "products": "QS3 0.6 ml",
-                        "week1": "1",
-                        "week2": "2",
-                        "week3": "4",
-                        "week4": "4",
+                        "week1": "91",
+                        "week2": "92",
+                        "week3": "94",
+                        "week4": "94",
                         "remarks": "Remarks"
 
                     }],
@@ -176,25 +176,25 @@ angular.module('sbAdminApp')
                         item: 'Man',
                         yesterday: 'red',
                         today: 'green',
-                        remarks: '@modo'
+                        remarks: 'Remarks'
                     }, {
                         id: 2,
                         item: 'Material',
                         yesterday: 'yellow',
                         today: 'green',
-                        remarks: '@fat'
+                        remarks: 'Remarks'
                     }, {
                         id: 3,
                         item: 'Machine',
                         yesterday: 'yellow',
                         today: 'green',
-                        remarks: '@twitter'
+                        remarks: 'Remarks'
                     }, {
                         id: 4,
                         item: 'Method',
                         yesterday: 'green',
                         today: 'green',
-                        remarks: '@twitter'
+                        remarks: 'Remarks'
                     }],
                     schema: {
                         model: {
