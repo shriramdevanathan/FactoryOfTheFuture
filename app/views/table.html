@@ -1,7 +1,7 @@
  <style>
    input
    {
-      width: 80px;
+      width: 100%;
    }
 </style>
 
@@ -48,27 +48,27 @@
                <div class="col-lg-6" >
                   <div class="well" >
                      <font size="2"><b ><u >Daily Status</u></b></font>
-                     <div class="row"  style="margin-top:20px;" ng-show="flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > <font size="2">Target : </font></span></div><div class="col-lg-6"><span ><input type="text" id='{{outputDaily.id}}' ng-model="outputDaily.target" class="inactive" readonly /> </span></div></div>
-                      <div class="row" style="margin-top:20px;" ng-show="!flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > <font size="2">Target :</font> </span></div><div class="col-lg-6"><span ><font size="2"><label ng-bind="outputDaily.target" /> </font></span></div></div>
+                     <div class="row"  style="margin-top:20px;" ng-show="flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right " ></i><span > <font size="1">Target: </font></span></div><div class="col-lg-4"><span ><input type="text" id='{{outputDaily.id}}' ng-model="outputDaily.target" class="inactive" readonly /> </span></div></div>
+                      <div class="row" style="margin-top:20px;" ng-show="!flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right" ></i><span > <font size="1">Target:</font> </span></div><div class="col-lg-4"><span ><font size="1"><label ng-bind="outputDaily.target" /> </font></span></div></div>
                      
 
-                     <div class="row" style="margin-top:20px;" ng-show="flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span ><font size="2"> Yesterday : </font></span></div><div class="col-lg-6"><span ><input type="text" id='{{outputDaily.id+1}}' ng-model="outputDaily.yesterday" class="inactive" readonly /></span></div></div>
-                      <div class="row" style="margin-top:20px;" ng-show="!flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span ><font size="2"> Yesterday : </font></span></div><div class="col-lg-6"><span ><font size="2"><label ng-bind="outputDaily.yesterday" ng-class='{red : underAcheivedYday, black: !underAcheivedYday}'></label></font></span></div></div>
+                     <div class="row" style="margin-top:20px;" ng-show="flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right" ></i><span ><font size="1">Yesterday: </font></span></div><div class="col-lg-4"><span ><input type="text" id='{{outputDaily.id+1}}' ng-model="outputDaily.yesterday" class="inactive" readonly /></span></div></div>
+                      <div class="row" style="margin-top:20px;" ng-show="!flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right" ></i><span ><font size="1">Yesterday: </font></span></div><div class="col-lg-4"><span ><font size="1"><label ng-bind="outputDaily.yesterday" ng-class='{red : underAcheivedYday, black: !underAcheivedYday}'></label></font></span></div></div>
                      
 
-                     <div  class="row" style="margin-top:20px;" ng-show="flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span ><font size="2"> Today : </font></span></div><div class="col-lg-6"><span ><input type="text" id='{{outputDaily.id+2}}' ng-model="outputDaily.today" class="inactive" readonly /></span></div></div>
-                      <div  class="row" style="margin-top:20px;" ng-show="!flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span ><font size="2"> Today : </font></span></div><div class="col-lg-6"><span ><font size="2"><label ng-bind="outputDaily.today" ng-class='{red : underAcheivedToday, black: !underAcheivedToday}'/></font></span></div></div>
+                     <div  class="row" style="margin-top:20px;" ng-show="flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right" ></i><span ><font size="1"> Today:</font></span></div><div class="col-lg-4"><span ><input type="text" id='{{outputDaily.id+2}}' ng-model="outputDaily.today" class="inactive" readonly /></span></div></div>
+                      <div  class="row" style="margin-top:20px;" ng-show="!flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right" ></i><span ><font size="1"> Today:</font></span></div><div class="col-lg-4"><span ><font size="1"><label ng-bind="outputDaily.today" ng-class='{red : underAcheivedToday, black: !underAcheivedToday}'/></font></span></div></div>
                   </div>
                </div>
                <div class="col-lg-6" >
                   <div class="well" >
                      <font size="2"><b ><u >Cummulative - Monthly</u></b></font>
-                     <div class="row" style="margin-top:20px;" ng-show = "flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span ><font size="2"> Target : </font></span></div><div class="col-lg-6"><span ><input type="text" id='{{outputCummulative.id}}' ng-model="outputCummulative.target" class="inactive" readonly/></span></div></div>
-                    <div class="row" style="margin-top:20px;" ng-show = "!flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span ><font size="2">Target : </font></span></div><div class="col-lg-6"><span ><font size="2"><label ng-bind="outputCummulative.target" backgroun/></font></span></div></div>
+                     <div class="row" style="margin-top:20px;" ng-show = "flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right  " ></i><span ><font size="1"> Target: </font></span></div><div class="col-lg-4"><span ><input type="text" width="50%" id='{{outputCummulative.id}}' ng-model="outputCummulative.target" /></span></div></div>
+                    <div class="row" style="margin-top:20px;" ng-show = "!flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right  " ></i><span ><font size="1">Target: </font></span></div><div class="col-lg-4"><span ><font size="1"><label ng-bind="outputCummulative.target" backgroun/></font></span></div></div>
 
-                     <div class="row" style="margin-top:20px;" ng-show = "flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > <font size="2">Acheived :</font> </span></div><div class="col-lg-6"><span ><input type="text" id='{{outputCummulative.id+1}}' ng-model="outputCummulative.acheived" class="inactive" readonly /></span></div></div>
-                      <div class="row" style="margin-top:20px;" ng-show = "!flagEditShow"><div class="col-lg-6"><i class="fa fa-hand-o-right  " ></i><span > <font size="2">Acheived : </font></span></div><div class="col-lg-6"><span ><font size="2"><label ng-bind="outputCummulative.acheived" /></font></span></div></div>
-                      <div class="row" style="margin-top:50px;" ><div class="col-lg-6"><span > </span></div><div class="col-lg-6"><span ></span></div></div>
+                     <div class="row" style="margin-top:20px;" ng-show = "flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right  " ></i><span > <font size="1">Acheived:</font> </span></div><div class="col-lg-4"><span ><input type="text" id='{{outputCummulative.id+1}}' ng-model="outputCummulative.acheived" class="inactive" readonly /></span></div></div>
+                      <div class="row" style="margin-top:20px;" ng-show = "!flagEditShow"><div class="col-lg-8"><i class="fa fa-hand-o-right  " ></i><span > <font size="1">Acheived: </font></span></div><div class="col-lg-4"><span ><font size="1"><label ng-bind="outputCummulative.acheived" /></font></span></div></div>
+                      <div class="row" style="margin-top:45px;" ><div class="col-lg-8"><span > </span></div><div class="col-lg-4"><span ></span></div></div>
                   </div>
                </div>
             </div>
