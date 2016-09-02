@@ -19,7 +19,7 @@
 
    <div class="col-lg-12" >
       <div class="page-header" >
-         <h1 ><span >Tier Board  </span><button class="btn-circle btn btn-lg btn-success" type="button" ><i class="fa fa-check" ></i></button><span > </span><span ><button type="button" class="btn btn-lg btn-primary pull-right fixed-width" ng-click="editTable()" ng-show="!flagEditShow">Edit</button></span><span ><button type="button"  class="btn btn-lg btn-primary pull-right fixed-width" ng-click="editDone()" ng-show="flagDoneShow">Done</button></span></h1>
+         <h1 ><span >Tier Board  </span><button ng-class="{'btn-circle' : true , 'btn' : true , 'btn-lg' : true, 'btn-success' : trafficStatus === 0 , 'btn-warning' : trafficStatus === 1, 'btn-danger' : trafficStatus === 2}" type="button" ><i class="fa fa-check" ></i></button><span > </span><span ><button type="button" class="btn btn-lg btn-primary pull-right fixed-width" ng-click="editTable()" ng-show="!flagEditShow">Edit</button></span><span ><button type="button"  class="btn btn-lg btn-primary pull-right fixed-width" ng-click="editDone()" ng-show="flagDoneShow">Done</button></span></h1>
       </div>
    </div>
    <div class="row" >

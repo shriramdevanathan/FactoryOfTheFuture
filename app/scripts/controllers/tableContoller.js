@@ -9,12 +9,30 @@
 angular.module('sbAdminApp')
     .controller('TableCtrl',
         function($scope, $timeout) {
-            $scope.onChangeHandler = function() {
+            $scope.onChangeHandler4M = function(dataItem) {
+                $timeout(function() {
+                    $scope.onChangeHandler();
+                    $scope.trafficStatus = 0;
+                    var data = $scope.fourMDataSource.data();
+                    for (var i in data) {
+                        if (data[i].today === "red") {
+                            $scope.trafficStatus = 2;
+                            break;
+                        }
+                        if (data[i].today === "yellow") {
+                            $scope.trafficStatus = 1;
+                        }
+                    }
+                    return;
+                });
+            }
+            $scope.onChangeHandler = function(dataItem) {
                 $scope.fpyDataGrid.refresh();
                 $scope.issueDataGrid.refresh();
                 $scope.fourMDataGrid.refresh();
             }
 
+            $scope.trafficStatus = 0;
             $scope.flagEditShow = false;
             $scope.flagDoneShow = false;
             $scope.outputDaily = {
@@ -156,26 +174,26 @@ angular.module('sbAdminApp')
                     data: [{
                         id: 1,
                         item: 'Man',
-                        yesterday: 'Mark',
-                        today: 'Otto',
+                        yesterday: 'green',
+                        today: 'green',
                         remarks: '@modo'
                     }, {
                         id: 2,
                         item: 'Material',
-                        yesterday: 'jacob',
-                        today: 'thornton',
+                        yesterday: 'green',
+                        today: 'green',
                         remarks: '@fat'
                     }, {
                         id: 3,
                         item: 'Machine',
-                        yesterday: 'larry',
-                        today: 'the bird',
+                        yesterday: 'yellow',
+                        today: 'yellow',
                         remarks: '@twitter'
                     }, {
                         id: 4,
                         item: 'Method',
-                        yesterday: 'larry',
-                        today: 'the bird',
+                        yesterday: 'green',
+                        today: 'green',
                         remarks: '@twitter'
                     }],
                     schema: {
@@ -202,6 +220,27 @@ angular.module('sbAdminApp')
                         }
                     }
                 });
+                $scope.trafficLightDataSource = new kendo.data.DataSource({
+                    data: [{
+                        "text": "red",
+                        "value": "red"
+                    }, {
+                        "text": "yellow",
+                        "value": "yellow"
+                    }, {
+                        "text": "green",
+                        "value": "green"
+                    }]
+                });
+                $scope.onDropdownChange4M = function(val) {
+                    $scope.trafficStatus = 1;
+
+                };
+
+                $scope.categoryDropDownEditor = function(container, options) {
+                    var editor = $('<input kendo-drop-down-list required k-data-text-field="\'text\'" k-data-value-field="\'value\'" k-data-source="trafficLightDataSource" data-bind="value:' + options.field + '"/>')
+                        .appendTo(container);
+                };
                 $scope.fourMOptions = {
                     columns: [{
                         field: "item",
@@ -210,10 +249,35 @@ angular.module('sbAdminApp')
                     }, {
                         field: "yesterday",
                         title: "Yesterday",
+                        template: function(dataItem) {
+                            if (dataItem.yesterday === "red") {
+                                return "<div style='background-color: red;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                            }
+                            if (dataItem.yesterday === "green") {
+                                return "<div style='background-color: green;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                            }
+                            if (dataItem.yesterday === "yellow") {
+                                return "<div style='background-color: #f0ad4e;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                            }
+                        },
+                        editor: $scope.categoryDropDownEditor,
+
                         // width: 10
                     }, {
                         field: "today",
                         title: "Today",
+                        template: function(dataItem) {
+                            if (dataItem.today === "red") {
+                                return "<div style='background-color: red;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                            }
+                            if (dataItem.today === "green") {
+                                return "<div style='background-color: green;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                            }
+                            if (dataItem.today === "yellow") {
+                                return "<div style='background-color: #f0ad4e;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                            }
+                        },
+                        editor: $scope.categoryDropDownEditor,
                         // width: 10
                     }, {
                         field: "remarks",
@@ -221,7 +285,7 @@ angular.module('sbAdminApp')
                         // width: 10
                     }],
                     editable: false,
-                    save: $scope.onChangeHandler
+                    save: $scope.onChangeHandler4M
                 };
             }
 
