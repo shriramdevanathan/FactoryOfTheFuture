@@ -222,23 +222,26 @@ angular.module('sbAdminApp')
                 });
                 $scope.trafficLightDataSource = new kendo.data.DataSource({
                     data: [{
-                        "text": "red",
-                        "value": "red"
+                        "text": "<div style='background-color: {{dataItem.color}};width:20px;height:20px;'' align='center' class='groupColor'></div>",
+                        "value": "red",
+                        "color": "red"
                     }, {
                         "text": "yellow",
-                        "value": "yellow"
+                        "value": "yellow",
+                        "color": "#f0ad4e"
                     }, {
                         "text": "green",
-                        "value": "green"
+                        "value": "green",
+                        "color": "green"
                     }]
                 });
                 $scope.onDropdownChange4M = function(val) {
                     $scope.trafficStatus = 1;
 
                 };
-
+                $scope.valueTemplate4M = "<div style='background-color: {{dataItem.color}};width:20px;height:20px;'' align='center' class='groupColor'></div>";
                 $scope.categoryDropDownEditor = function(container, options) {
-                    var editor = $('<input kendo-drop-down-list required k-data-text-field="\'text\'" k-data-value-field="\'value\'" k-data-source="trafficLightDataSource" data-bind="value:' + options.field + '"/>')
+                    var editor = $('<input kendo-drop-down-list required k-data-text-field="\'text\'" k-data-value-field="\'value\'" k-value-template="valueTemplate4M" k-template="valueTemplate4M" k-data-source="trafficLightDataSource" data-bind="value:' + options.field + '"/>')
                         .appendTo(container);
                 };
                 $scope.fourMOptions = {
