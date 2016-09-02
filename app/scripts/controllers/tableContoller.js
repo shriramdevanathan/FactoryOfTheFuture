@@ -28,6 +28,8 @@ angular.module('sbAdminApp')
                 target: '6',
                 acheived: '6'
             };
+            $scope.underAcheivedToday = false;
+            $scope.underAcheivedYday = false;
 
             function initFPYTable() {
                 //Ideally Data should come from 
@@ -387,6 +389,13 @@ angular.module('sbAdminApp')
                 $scope.dataSourceSample.sync();
 
             }
+            $scope.getColor = function() {
+                if ($scope.outputDaily.target > $scope.outputDaily.today) {
+                    return "{color: red;}";
+                } else {
+                    return "{color: green;}";
+                }
+            }
 
             $scope.editTable = function() {
                 // 1. output status 
@@ -422,6 +431,18 @@ angular.module('sbAdminApp')
                 for (var id = $scope.outputCummulative.id; id < $scope.outputCummulative.id + 3; id++) {
                     var obj = $("#" + id);
                     obj.attr("readOnly", true);
+                }
+
+
+                if (($scope.outputDaily.target > $scope.outputDaily.today)) {
+                    $scope.underAcheivedToday = true;
+                } else {
+                    $scope.underAcheivedToday = false;
+                }
+                if (($scope.outputDaily.target > $scope.outputDaily.yesterday)) {
+                    $scope.underAcheivedYday = true;
+                } else {
+                    $scope.underAcheivedYday = false;
                 }
 
                 // flag
