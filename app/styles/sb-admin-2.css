@@ -333,11 +333,15 @@ table.dataTable thead .sorting:after {
 .panel-green {
     border-color: #5cb85c;
 }
+.panel-lightgray { 
+    background-color: lightgray;
+}
 .padding-instrument-footer{
     padding-top:10px;
     padding-right: 22px;
     padding-left: 22px;
     padding-bottom:21px;
+    background-color:#fff;
 
 }
 .close-icon{
@@ -416,4 +420,127 @@ div.k-grid-header th.k-header {
     background-color: #d9edf7 !important;
     font-weight: bold;
     height:30px;
+}
+
+/*.custom-template{
+    background:white;
+    border-color:white !important;
+
+}
+.custom-template img {
+        float: left;
+        margin: 0 8px;
+}
+.custom-template p {
+        margin: 5px 0 0;
+}
+.custom-template h3 {
+        padding: 0 8px 5px;
+        font-size: 12px;
+}
+.custom-template a {
+        color: #ffffff;
+        font-weight: bold;
+        text-decoration: none;
+}
+.k-state-hover .custom-template a,
+    .custom-template a:hover {
+        color: #000000;
+}
+.k-scheduler-content .k-event {
+        border:0 !important;
+        background-color: white !important;
+ 
+}*/
+
+
+
+
+
+.wrap {
+            background-image: url("../assets/book.png");
+            height: 182px;
+            position: relative;
+        }
+
+.book {
+    position: relative;
+    height: 177px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+.book > li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    text-align:center;
+
+}
+.book > li > span {
+    font-weight:bold;
+}
+#actions {
+    overflow: hidden;
+    margin: 0 auto 3em;
+    width: 650px;
+}
+
+.previous, .next {
+    text-decoration: none;
+    text-indent: -999em;
+    overflow: hidden;
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    opacity: .5
+}
+
+.previous:hover, .next:hover {
+    opacity: 1;
+}
+
+.previous {
+    left: 0;
+    background-image: url("../assets/arrow-left.png");
+    cursor:pointer;
+}
+
+.next {
+    right: 0;
+    background-image: url("../assets/arrow-right.png");
+    cursor:pointer;
+}
+
+.first-page .previous {
+    display: none;
+}
+
+.last-page .next {
+    display: none;
+}
+
+.circle-base {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 3px solid black;
+    margin-right:20px;
+}
+
+.type-red {
+    background: red;
+}
+
+.type-yellow {
+    background: yellow;
+}
+
+.type-green {
+    background: green;
 }

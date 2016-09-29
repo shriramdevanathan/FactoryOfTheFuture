@@ -1,0 +1,29 @@
+ <script id="event-template" type="text/x-kendo-template">
+  <div class="custom-template">
+  	# if(isTarget){ #
+	  <div>Target : <label>#: target #</label></div>
+	# } else { #
+		# if(target > achieved){ #
+	  		<div style="color:red">Achieved : <label>#: achieved #</label></div>
+	  	# } else { #
+	  		<div>Achieved : <label>#: achieved #</label></div>
+	  	# } #
+    # } #
+  </div>
+</script>
+<script id="customEditorTemplate" type="text/x-kendo-template">
+	# if(isTarget){ #
+	Target: <input value="#: target #" size="7"/>
+	# } else { #
+	Achieved: <input value="#: achieved #" size="7"/>
+	# } #
+</script>
+ <div ng-init="callOnce()"  ng-controller="ProdPlanCtrl" >
+ 	<br/>
+	Monthly Target <input type="text" class="k-textbox" ng-model="monthlyTarget" ></input>
+	<button class="btn btn-primary" ng-click="applyMonthlyTarget()">Apply</button>
+	<br/><br/>
+    <div class="k-content" kendo-scheduler="prodPlanScheduler" k-rebind="schedulerOptions" k-options="schedulerOptions">
+    </div>
+  
+</div> 

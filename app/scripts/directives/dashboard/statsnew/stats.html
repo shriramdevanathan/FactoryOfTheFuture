@@ -1,0 +1,33 @@
+<div  class="col-lg-5 col-md-6">
+    <div ng-show="type==='comments'" class="panel panel-lightgray">
+        <div style="cursor:pointer" ng-click="clickInstrument()"  class="panel-heading">
+            <div class="row">
+                <!-- <span ng-show="removeflag===true" class="glyphicon glyphicon-minus close-icon"></span> -->
+                <div style="padding-left:20px;font-weight:bold;font-size:1.5vw">{{number}} Cell
+                    <div class="pull-right circle-base type-base type-{{colour}}"></div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="panel-footer padding-instrument-footer">
+            <div style="font-weight:bold">Products:</div>
+            <div style="font-weight:bold">QS 3/5</div>
+            <br>
+            <div class="wrap first-page" id="wrap-{{id}}">
+                <ul class="book" id="book-{{id}}">
+                    <li><span>Output Status</span><kpi></kpi></li>
+                    <li><span>Actual vs Planned</span><outputstatus id="{{id}}"></outputstatus></li>
+                    <li class="current"><span>4M status</span><fourm></fourm></li>
+                </ul>
+
+                <a href="" class="previous" ng-click="clickPrevious(id)" id="previous-{{id}}">Previous page</a>
+                <a href="" class="next" ng-click="clickNext(id)" id="next-{{id}}">Next page</a>
+            </div>
+                
+        </div>
+    </div>
+<!--     <div ng-show="type==='button'" style="padding:20px;text-align:center">
+        <button type="button" class="btn btn-info btn-circle btn-xl"><i class="glyphicon glyphicon-plus"></i>
+        </button>
+    </div> -->
+</div>

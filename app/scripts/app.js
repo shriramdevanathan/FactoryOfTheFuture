@@ -128,6 +128,39 @@ angular
                     }
 
                 })
+                .state('dashboard.prodplan', {
+                    templateUrl: 'views/prodplan.html',
+                    url: '/prodplan',
+                    controller: 'ProdPlanCtrl',
+                    resolve: {
+                        loadMyFile: function($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                name: 'sbAdminApp',
+                                files: ['scripts/controllers/prodplanController.js']
+                            })
+                        }
+                    }
+
+                })
+                .state('dashboard.dashboardnew', {
+                    templateUrl: 'views/dashboardnew.html',
+                    url: '/dashboardnew',
+                    controller: 'DashboardNewCtrl',
+                    resolve: {
+                        loadMyFile: function($ocLazyLoad) {
+                            return $ocLazyLoad.load({
+                                name: 'sbAdminApp',
+                                files: ['scripts/controllers/dashboardnewController.js',
+                                        'scripts/directives/dashboard/fourmstatus/fourm.js',
+                                        'scripts/directives/dashboard/kpistatus/kpi.js',
+                                        'scripts/directives/dashboard/outputstatus/outputstatus.js',
+                                        'scripts/directives/dashboard/statsnew/stats.js'
+                                        ]
+                            })
+                        }
+                    }
+
+                })
                 .state('dashboard.chart', {
                     templateUrl: 'views/chart.html',
                     url: '/chart',
