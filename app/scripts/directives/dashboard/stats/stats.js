@@ -29,7 +29,8 @@ angular.module('sbAdminApp')
                 'removeflag': '=',
                 'removeInstrument': '&',
                 'clickInstrument': '&',
-                'editInstrument': '&'
+                'editInstrument': '&',
+                'id' : '@'
             }
 
         }

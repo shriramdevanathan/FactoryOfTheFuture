@@ -13,6 +13,7 @@ angular.module('sbAdminApp')
             restrict: 'E',
             replace: true,
             link: function(scope, iElement, iAttrs) {
+                scope.cellStatus = "green";
                 function current(page) {
                     var book = $("#book-"+scope.id),
                         pages = book.children(),
@@ -66,7 +67,9 @@ angular.module('sbAdminApp')
                 'clickInstrument': '&',
                 'editInstrument': '&',
                 'id' : '@',
-                'classType': '@'
+                'classType': '@',
+                'dataSource':'@',
+                'optionsKendo' : '@'
             }
 
         }
