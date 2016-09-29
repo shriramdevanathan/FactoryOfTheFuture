@@ -7,13 +7,13 @@
  * # adminPosHeader
  */
 angular.module('sbAdminApp')
-    .directive('statsnew', function() {
+    .directive('statsnew', function($timeout) {
         return {
             templateUrl: 'scripts/directives/dashboard/statsnew/stats.html',
             restrict: 'E',
             replace: true,
             link: function(scope, iElement, iAttrs) {
-                scope.cellStatus = "green";
+                
                 function current(page) {
                     var book = $("#book-"+scope.id),
                         pages = book.children(),
@@ -50,6 +50,8 @@ angular.module('sbAdminApp')
                 scope.clickPrevious = function(){
                     current(Math.max(1, current() - 1));
                 };
+
+                
             },
             scope: {
                 'model': '=',
@@ -68,8 +70,11 @@ angular.module('sbAdminApp')
                 'editInstrument': '&',
                 'id' : '@',
                 'classType': '@',
-                'dataSource':'@',
-                'optionsKendo' : '@'
+                'datasource':'=',
+                'optionskendo' : '=',
+                'trafficsource':'=',
+                'valuetemplate' : '=',
+                'cellstatus' : '='
             }
 
         }

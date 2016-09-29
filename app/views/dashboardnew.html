@@ -1,6 +1,6 @@
    <div ng-init="callOnce()"  ng-controller="DashboardNewCtrl" >
 
-    	<statsnew ng-repeat="obj in instrumentObjArr | limitTo:limit" click-instrument="clickInstrument(obj)" number="{{obj.instrumentName}}" id="{{obj.id}}" removeflag="removeflag" remove-instrument="removeInstrument(obj.id)" edit-instrument="editInstrument(obj.id)" comments="{{obj.comments}}" colour="{{obj.colour}}" linelead="{{obj.linelead}}" supervisor="{{obj.supervisor}}" type="{{obj.type}}" data-source="{{fourMDataSource[$index]}}" options-kendo="fourMOptions[$index]">
+    	<statsnew ng-repeat="obj in instrumentObjArr | limitTo:limit" number="{{obj.instrumentName}}" id="{{obj.id}}" colour="{{obj.colour}}" type="{{obj.type}}" datasource="fourMDataSource[$index]" comments="{{obj.comments}}" optionskendo="fourMOptions" trafficsource="trafficLightDataSource" valuetemplate="valueTemplate4M" cellstatus="cellStatus[$index]">
         
     </div>
 

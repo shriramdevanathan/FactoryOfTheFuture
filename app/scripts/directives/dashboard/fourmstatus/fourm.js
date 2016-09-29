@@ -16,9 +16,17 @@ angular.module('sbAdminApp')
                 $scope.trafficStatus = 0;
                 $scope.flagEditShow = false;
                 $scope.flagDoneShow = false;
+                $scope.dataSource = $scope.datasource;
+                $scope.opts = $scope.optionskendo;
+                $scope.valueTemplate4M = $scope.valuetemplate;
+                $scope.trafficLightDataSource = $scope.trafficsource;
             },
             scope: {
-                'idFourm' : '@'
+                'idFourm' : '@',
+                'datasource':'=',
+                'optionskendo' : '=',
+                'trafficsource':'=',
+                'valuetemplate' : '='
                
             }
 

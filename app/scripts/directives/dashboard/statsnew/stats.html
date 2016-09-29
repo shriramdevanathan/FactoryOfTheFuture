@@ -4,7 +4,7 @@
             <div class="row">
                 <!-- <span ng-show="removeflag===true" class="glyphicon glyphicon-minus close-icon"></span> -->
                 <div style="padding-left:20px;font-weight:bold;font-size:1.5vw">{{number}} Cell
-                    <div ng-class="{'pull-right' : true , 'circle-base' : true, 'type-base' : true , 'type-green' : $parent.cellStatus==='green' , 'type-red' : $parent.cellStatus==='red' , 'type-yellow' : $parent.cellStatus === 'yellow' }"></div>
+                    <div ng-class="{'pull-right' : true , 'circle-base' : true, 'type-base' : true , 'type-green' : cellstatus==='green' , 'type-red' : cellstatus==='red' , 'type-yellow' : cellstatus === 'yellow' }"></div>
                 </div>
                 
             </div>
@@ -17,7 +17,7 @@
                 <ul class="book" id="book-{{id}}">
                     <li><span>Output Status</span><kpi></kpi></li>
                     <li><span>Actual vs Planned</span><outputstatus id="{{id}}"></outputstatus></li>
-                    <li class="current"><span>4M status</span><fourm id-fourm="{{id}}" data-source="" options-kendo=""></fourm></li>
+                    <li class="current"><span>4M status</span><fourm id-fourm="{{id}}" datasource="datasource" optionskendo="optionskendo" trafficsource="trafficsource" valuetemplate="valuetemplate" ></fourm></li>
                 </ul>
 
                 <a href="" class="previous" ng-click="clickPrevious(id)" id="previous-{{id}}">Previous page</a>

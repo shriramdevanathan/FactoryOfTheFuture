@@ -9,13 +9,10 @@
 angular.module('sbAdminApp')
     .controller('DashboardNewCtrl',
         function($scope, $timeout) {
-        $scope.cellStatus = "green";
+        $scope.cellStatus = [];
         $scope.limit = 6;
         $scope.fourMDataGrid = [];
-        $scope.fourMOptions = [];
         $scope.categoryDropDownEditor = [];
-        $scope.valueTemplate4M = [];
-        $scope.trafficLightDataSource = [];
         function initFourMDirective() {
 
             function initFourMTable() {
@@ -26,30 +23,96 @@ angular.module('sbAdminApp')
                 var onChangeHandler4M = function(dataItem) {
                     $timeout(function() {
                         $scope.onChangeHandler();
-                        $scope.cellStatus = "green";
+                        $scope.cellStatus[0] = "green";
                         var data = $scope.fourMDataSource[0].data();
                         for (var i in data) {
                             if (data[i].today === "red") {
                                 $scope.trafficStatus = 2;
-                                $scope.cellStatus = "red";
+                                $scope.cellStatus[0] = "red";
                                 break;
                             }
                             if (data[i].today === "yellow") {
                                 $scope.trafficStatus = 1;
-                                $scope.cellStatus = "yellow";
+                                $scope.cellStatus[0] = "yellow";
                             }
                         }
                         $scope.$apply();
                         return;
                     });
                 }
-
+                $scope.valueTemplate4M = "<div style='background-color: {{dataItem.color}};width:20px;height:20px; margin-left:5px' align='center' class='groupColor'></div>";
+                $scope.trafficLightDataSource = new kendo.data.DataSource({
+                            data: [{
+                                "text": "<div style='background-color: {{dataItem.color}};width:20px;height:20px;'' align='center' class='groupColor'></div>",
+                                "value": "red",
+                                "color": "red"
+                            }, {
+                                "text": "yellow",
+                                "value": "yellow",
+                                "color": "#f0ad4e"
+                            }, {
+                                "text": "green",
+                                "value": "green",
+                                "color": "green"
+                            }]
+                });
                 $scope.onChangeHandler = function(dataItem) {
-                    for(var i =0;i<$scope.limit;i++){
+                    for(var i =0;i < $scope.limit;i++){
                         $scope.fourMDataGrid[i].refresh();
                     }
                 };
-                for(var i=0 ;i < $scope.limit; i++) {
+                $scope.categoryDropDownEditor = function(container, options) {
+                        var editor = $('<input kendo-drop-down-list required k-data-text-field="\'text\'" k-data-value-field="\'value\'" k-value-template="valueTemplate4M" k-template="valueTemplate4M" k-data-source="trafficLightDataSource" data-bind="value:' + options.field + '"/>')
+                            .appendTo(container);
+                };
+                var options = {
+                        columns: [{
+                            field: "item",
+                            title: "#",
+                            // width: 15
+                        }, {
+                            field: "yesterday",
+                            title: "Yesterday",
+                            template: function(dataItem) {
+                                if (dataItem.yesterday === "red") {
+                                    return "<div style='background-color: red;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                }
+                                if (dataItem.yesterday === "green") {
+                                    return "<div style='background-color: green;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                }
+                                if (dataItem.yesterday === "yellow") {
+                                    return "<div style='background-color: #f0ad4e;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                }
+                            },
+                            editor: $scope.categoryDropDownEditor,
+
+                            // width: 10
+                        }, {
+                            field: "today",
+                            title: "Today",
+                            template: function(dataItem) {
+                                if (dataItem.today === "red") {
+                                    return "<div style='background-color: red;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                }
+                                if (dataItem.today === "green") {
+                                    return "<div style='background-color: green;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                }
+                                if (dataItem.today === "yellow") {
+                                    return "<div style='background-color: #f0ad4e;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                }
+                            },
+                            editor: $scope.categoryDropDownEditor,
+                            // width: 10
+                        }, {
+                            field: "remarks",
+                            title: "Remarks",
+                            // width: 10
+                        }],
+                        editable: true,
+                        save: onChangeHandler4M
+                };
+                $scope.fourMOptions = options;
+                for(var i = 0 ;i < $scope.limit; i++) {
                      var dataSource = new kendo.data.DataSource({
                         data: [{
                             id: 1,
@@ -103,76 +166,7 @@ angular.module('sbAdminApp')
                     $scope.fourMDataSource.push(
                         dataSource
                     );
-                    $scope.categoryDropDownEditor[i] = function(container, options) {
-                        var editor = $('<input kendo-drop-down-list required k-data-text-field="\'text\'" k-data-value-field="\'value\'" k-value-template="$parent.$parent.$parent.valueTemplate4M[idFourm]" k-template="$parent.$parent.$parent.valueTemplate4M[idFourm]" k-data-source="$parent.$parent.$parent.trafficLightDataSource[idFourm]" data-bind="value:' + options.field + '"/>')
-                            .appendTo(container);
-                    };
-                    var options = {
-                        columns: [{
-                            field: "item",
-                            title: "#",
-                            // width: 15
-                        }, {
-                            field: "yesterday",
-                            title: "Yesterday",
-                            template: function(dataItem) {
-                                if (dataItem.yesterday === "red") {
-                                    return "<div style='background-color: red;width:20px;height:20px;'' align='center' class='groupColor'></div>";
-                                }
-                                if (dataItem.yesterday === "green") {
-                                    return "<div style='background-color: green;width:20px;height:20px;'' align='center' class='groupColor'></div>";
-                                }
-                                if (dataItem.yesterday === "yellow") {
-                                    return "<div style='background-color: #f0ad4e;width:20px;height:20px;'' align='center' class='groupColor'></div>";
-                                }
-                            },
-                            editor: $scope.categoryDropDownEditor[i],
-
-                            // width: 10
-                        }, {
-                            field: "today",
-                            title: "Today",
-                            template: function(dataItem) {
-                                if (dataItem.today === "red") {
-                                    return "<div style='background-color: red;width:20px;height:20px;'' align='center' class='groupColor'></div>";
-                                }
-                                if (dataItem.today === "green") {
-                                    return "<div style='background-color: green;width:20px;height:20px;'' align='center' class='groupColor'></div>";
-                                }
-                                if (dataItem.today === "yellow") {
-                                    return "<div style='background-color: #f0ad4e;width:20px;height:20px;'' align='center' class='groupColor'></div>";
-                                }
-                            },
-                            editor: $scope.categoryDropDownEditor[i],
-                            // width: 10
-                        }, {
-                            field: "remarks",
-                            title: "Remarks",
-                            // width: 10
-                        }],
-                        editable: true,
-                        save: onChangeHandler4M
-                    };
-                    $scope.fourMOptions.push(
-                        options
-                    );
-                    $scope.valueTemplate4M[i] = "<div style='background-color: {{dataItem.color}};width:20px;height:20px; margin-left:5px' align='center' class='groupColor'></div>";
-                    $scope.trafficLightDataSource[i] = new kendo.data.DataSource({
-                            data: [{
-                                "text": "<div style='background-color: {{dataItem.color}};width:20px;height:20px;'' align='center' class='groupColor'></div>",
-                                "value": "red",
-                                "color": "red"
-                            }, {
-                                "text": "yellow",
-                                "value": "yellow",
-                                "color": "#f0ad4e"
-                            }, {
-                                "text": "green",
-                                "value": "green",
-                                "color": "green"
-                            }]
-                    });
-                    
+                    $scope.cellStatus.push("green");
                 }
                 
             }
@@ -191,66 +185,10 @@ angular.module('sbAdminApp')
                 }
             }
 
-            $scope.editTable = function() {
-                // 1. output status 
-                for (var id = $scope.outputDaily.id; id < $scope.outputDaily.id + 3; id++) {
-                    var obj = $("#" + id);
-                    obj.attr("readOnly", false);
-                }
-                for (var id = $scope.outputCummulative.id; id < $scope.outputCummulative.id + 3; id++) {
-                    var obj = $("#" + id);
-                    obj.attr("readOnly", false);
-                }
 
-                // flag
-                $scope.flagEditShow = !$scope.flagEditShow;
-                $scope.flagDoneShow = !$scope.flagDoneShow;
+            initTableData();
 
-                $scope.sampleOptions.editable = $scope.flagEditShow;
-                $scope.issueOptions.editable = $scope.flagEditShow;
-                $scope.fourMOptions.editable = $scope.flagEditShow;
-                $timeout(function() {
-                    $scope.fpyDataGrid.refresh();
-                    $scope.issueDataGrid.refresh();
-                    $scope.$apply();
-                });
-            }
-
-            $scope.editDone = function() {
-                // 1. output status 
-                for (var id = $scope.outputDaily.id; id < $scope.outputDaily.id + 3; id++) {
-                    var obj = $("#" + id);
-                    obj.attr("readOnly", true);
-                }
-                for (var id = $scope.outputCummulative.id; id < $scope.outputCummulative.id + 3; id++) {
-                    var obj = $("#" + id);
-                    obj.attr("readOnly", true);
-                }
-
-
-                if (($scope.outputDaily.target > $scope.outputDaily.today)) {
-                    $scope.underAcheivedToday = true;
-                } else {
-                    $scope.underAcheivedToday = false;
-                }
-                if (($scope.outputDaily.target > $scope.outputDaily.yesterday)) {
-                    $scope.underAcheivedYday = true;
-                } else {
-                    $scope.underAcheivedYday = false;
-                }
-
-                // flag
-                $scope.flagEditShow = !$scope.flagEditShow;
-                $scope.flagDoneShow = !$scope.flagDoneShow;
-                $timeout(function() {
-                    // initTableData();
-                    $scope.$apply();
-
-                });
-            }
-           
             $timeout(function() {
-                initTableData();
                 $scope.$apply();
             });
         
