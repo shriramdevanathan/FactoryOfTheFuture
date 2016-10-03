@@ -52,7 +52,7 @@ angular.module('sbAdminApp')
                             }, {
                                 "text": "yellow",
                                 "value": "yellow",
-                                "color": "#f0ad4e"
+                                "color": "yellow"
                             }, {
                                 "text": "green",
                                 "value": "green",
@@ -189,7 +189,7 @@ angular.module('sbAdminApp')
                                     color="green";
                                 }
                                 if (dataItem.yesterday === "yellow") {
-                                    color = "#f0ad4e";
+                                    color = "yellow";
                                 }
                                 return "<div style='" + style + "background: "+color + "'></div>";
                             },
@@ -210,7 +210,7 @@ angular.module('sbAdminApp')
                                     color="green";
                                 }
                                 if (dataItem.today === "yellow") {
-                                    color = "#f0ad4e";
+                                    color = "yellow";
                                 }
                                 return "<div style='" + style + "background: "+color + "'></div>";
                             },
