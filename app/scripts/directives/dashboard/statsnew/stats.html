@@ -17,7 +17,7 @@
                 <ul class="book" id="book-{{id}}">
                     <li><span>Output Status</span><kpi></kpi></li>
                     <li><span>Actual vs Planned</span><outputstatus id="{{id}}"></outputstatus></li>
-                    <li class="current"><span>4M status</span><fourm id-fourm="{{id}}" datasource="datasource" optionskendo="optionskendo" trafficsource="trafficsource" valuetemplate="valuetemplate" ></fourm></li>
+                    <li class="current"><span>4M status</span><fourm id-fourm="{{id}}" datasource="datasource" optionskendo="optionskendo" trafficsource="trafficsource" valuetemplate="valuetemplate" on-save-handler="onSaveHandler" model="model" ></fourm></li>
                 </ul>
 
                 <a href="" class="previous" ng-click="clickPrevious(id)" id="previous-{{id}}">Previous page</a>

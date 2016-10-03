@@ -74,7 +74,9 @@ angular.module('sbAdminApp')
                 'optionskendo' : '=',
                 'trafficsource':'=',
                 'valuetemplate' : '=',
-                'cellstatus' : '='
+                'cellstatus' : '=',
+                'onSaveHandler' : '&',
+                'model' : '='
             }
 
         }

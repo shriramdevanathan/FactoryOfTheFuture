@@ -13,34 +13,36 @@ angular.module('sbAdminApp')
         $scope.limit = 6;
         $scope.fourMDataGrid = [];
         $scope.categoryDropDownEditor = [];
+        $scope.fourMOptions = [];
         function initFourMDirective() {
 
             function initFourMTable() {
                 $scope.fourMDataSource = [];
                
 
-                //var func = 
-                var onChangeHandler4M = function(dataItem) {
+                
+                $scope.onChangeHandler4M = function(dataItem) {
+                    console.log("on change");
                     $timeout(function() {
                         $scope.onChangeHandler();
-                        $scope.cellStatus[0] = "green";
-                        var data = $scope.fourMDataSource[0].data();
+                        $scope.cellStatus[$scope.idFourm] = "green";
+                        var data = $scope.fourMDataSource[$scope.idFourm].data();
                         for (var i in data) {
                             if (data[i].today === "red") {
                                 $scope.trafficStatus = 2;
-                                $scope.cellStatus[0] = "red";
+                                $scope.cellStatus[$scope.idFourm] = "red";
                                 break;
                             }
                             if (data[i].today === "yellow") {
                                 $scope.trafficStatus = 1;
-                                $scope.cellStatus[0] = "yellow";
+                                $scope.cellStatus[$scope.idFourm] = "yellow";
                             }
                         }
                         $scope.$apply();
                         return;
                     });
                 }
-                $scope.valueTemplate4M = "<div style='background-color: {{dataItem.color}};width:20px;height:20px; margin-left:5px' align='center' class='groupColor'></div>";
+                $scope.valueTemplate4M = "<div style='background-color: {{dataItem.color}};width:20px;height:20px; -webkit-border-radius: 25px;-moz-border-radius: 25px;border-radius: 25px;margin-left:5px' align='center' class='groupColor'></div>";
                 $scope.trafficLightDataSource = new kendo.data.DataSource({
                             data: [{
                                 "text": "<div style='background-color: {{dataItem.color}};width:20px;height:20px;'' align='center' class='groupColor'></div>",
@@ -56,16 +58,118 @@ angular.module('sbAdminApp')
                                 "color": "green"
                             }]
                 });
-                $scope.onChangeHandler = function(dataItem) {
-                    for(var i =0;i < $scope.limit;i++){
-                        $scope.fourMDataGrid[i].refresh();
-                    }
-                };
+                
                 $scope.categoryDropDownEditor = function(container, options) {
                         var editor = $('<input kendo-drop-down-list required k-data-text-field="\'text\'" k-data-value-field="\'value\'" k-value-template="valueTemplate4M" k-template="valueTemplate4M" k-data-source="trafficLightDataSource" data-bind="value:' + options.field + '"/>')
                             .appendTo(container);
                 };
-                var options = {
+                
+                
+                for(var i = 0 ;i < $scope.limit; i++) {
+                    if(i==1){
+                        var dataSource = new kendo.data.DataSource({
+                            data: [{
+                                id: 1,
+                                item: 'Man',
+                                yesterday: 'red',
+                                today: 'red',
+                                remarks: 'Rearks1'
+                            }, {
+                                id: 2,
+                                item: 'Material',
+                                yesterday: 'yellow',
+                                today: 'green',
+                                remarks: 'Remarks'
+                            }, {
+                                id: 3,
+                                item: 'Machine',
+                                yesterday: 'yellow',
+                                today: 'green',
+                                remarks: 'Remarks'
+                            }, {
+                                id: 4,
+                                item: 'Method',
+                                yesterday: 'green',
+                                today: 'green',
+                                remarks: 'Remarks'
+                            }],
+                            schema: {
+                                model: {
+                                    id: "id",
+                                    fields: {
+                                        item: {
+                                            type: "string",
+                                            editable: true
+                                        },
+                                        yesterday: {
+                                            type: "string",
+                                            editable: true
+                                        },
+                                        today: {
+                                            type: "string",
+                                            editable: true
+                                        },
+                                        remarks: {
+                                            type: "string",
+                                            editable: true
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    }else{
+                        var dataSource = new kendo.data.DataSource({
+                            data: [{
+                                id: 1,
+                                item: 'Man',
+                                yesterday: 'red',
+                                today: 'green',
+                                remarks: 'Remarks'
+                            }, {
+                                id: 2,
+                                item: 'Material',
+                                yesterday: 'yellow',
+                                today: 'green',
+                                remarks: 'Remarks'
+                            }, {
+                                id: 3,
+                                item: 'Machine',
+                                yesterday: 'yellow',
+                                today: 'green',
+                                remarks: 'Remarks'
+                            }, {
+                                id: 4,
+                                item: 'Method',
+                                yesterday: 'green',
+                                today: 'green',
+                                remarks: 'Remarks'
+                            }],
+                            schema: {
+                                model: {
+                                    id: "id",
+                                    fields: {
+                                        item: {
+                                            type: "string",
+                                            editable: true
+                                        },
+                                        yesterday: {
+                                            type: "string",
+                                            editable: true
+                                        },
+                                        today: {
+                                            type: "string",
+                                            editable: true
+                                        },
+                                        remarks: {
+                                            type: "string",
+                                            editable: true
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    var options = {
                         columns: [{
                             field: "item",
                             title: "#",
@@ -74,15 +178,19 @@ angular.module('sbAdminApp')
                             field: "yesterday",
                             title: "Yesterday",
                             template: function(dataItem) {
+                                var color = "";
+                                var style = "width: 20px;height: 20px;-webkit-border-radius: 25px;-moz-border-radius: 25px;border-radius: 25px;";
+                                
                                 if (dataItem.yesterday === "red") {
-                                    return "<div style='background-color: red;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                    color = "red";
                                 }
                                 if (dataItem.yesterday === "green") {
-                                    return "<div style='background-color: green;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                    color="green";
                                 }
                                 if (dataItem.yesterday === "yellow") {
-                                    return "<div style='background-color: #f0ad4e;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                    color = "#f0ad4e";
                                 }
+                                return "<div style='" + style + "background: "+color + "'></div>";
                             },
                             editor: $scope.categoryDropDownEditor,
 
@@ -91,15 +199,19 @@ angular.module('sbAdminApp')
                             field: "today",
                             title: "Today",
                             template: function(dataItem) {
+                                var color = "";
+                                var style = "width: 20px;height: 20px;-webkit-border-radius: 25px;-moz-border-radius: 25px;border-radius: 25px;";
+                                
                                 if (dataItem.today === "red") {
-                                    return "<div style='background-color: red;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                    color = "red";
                                 }
                                 if (dataItem.today === "green") {
-                                    return "<div style='background-color: green;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                    color="green";
                                 }
                                 if (dataItem.today === "yellow") {
-                                    return "<div style='background-color: #f0ad4e;width:20px;height:20px;'' align='center' class='groupColor'></div>";
+                                    color = "#f0ad4e";
                                 }
+                                return "<div style='" + style + "background: "+color + "'></div>";
                             },
                             editor: $scope.categoryDropDownEditor,
                             // width: 10
@@ -108,65 +220,15 @@ angular.module('sbAdminApp')
                             title: "Remarks",
                             // width: 10
                         }],
-                        editable: true,
-                        save: onChangeHandler4M
-                };
-                $scope.fourMOptions = options;
-                for(var i = 0 ;i < $scope.limit; i++) {
-                     var dataSource = new kendo.data.DataSource({
-                        data: [{
-                            id: 1,
-                            item: 'Man',
-                            yesterday: 'red',
-                            today: 'green',
-                            remarks: 'Remarks'
-                        }, {
-                            id: 2,
-                            item: 'Material',
-                            yesterday: 'yellow',
-                            today: 'green',
-                            remarks: 'Remarks'
-                        }, {
-                            id: 3,
-                            item: 'Machine',
-                            yesterday: 'yellow',
-                            today: 'green',
-                            remarks: 'Remarks'
-                        }, {
-                            id: 4,
-                            item: 'Method',
-                            yesterday: 'green',
-                            today: 'green',
-                            remarks: 'Remarks'
-                        }],
-                        schema: {
-                            model: {
-                                id: "id",
-                                fields: {
-                                    item: {
-                                        type: "string",
-                                        editable: true
-                                    },
-                                    yesterday: {
-                                        type: "string",
-                                        editable: true
-                                    },
-                                    today: {
-                                        type: "string",
-                                        editable: true
-                                    },
-                                    remarks: {
-                                        type: "string",
-                                        editable: true
-                                    }
-                                }
-                            }
-                        }
-                    });
+                        editable: true
+                        
+                    };
                     $scope.fourMDataSource.push(
                         dataSource
                     );
                     $scope.cellStatus.push("green");
+                    $scope.fourMOptions.push(options);
+                    $scope.fourMDataGrid.push();
                 }
                 
             }
