@@ -70,20 +70,37 @@ angular
                     }
                 })
                 .state('dashboard.home', {
-                    url: '/home',
-                    controller: 'MainCtrl',
-                    templateUrl: 'views/dashboard/home.html',
+                    //Old Dashboard
+                    // url: '/home',
+                    // controller: 'MainCtrl',
+                    // templateUrl: 'views/dashboard/home.html',
+                    // resolve: {
+                    //     loadMyFiles: function($ocLazyLoad) {
+                    //         return $ocLazyLoad.load({
+                    //             name: 'sbAdminApp',
+                    //             files: [
+                    //                 'scripts/controllers/main.js',
+                    //                 'scripts/directives/timeline/timeline.js',
+                    //                 'scripts/directives/notifications/notifications.js',
+                    //                 'scripts/directives/chat/chat.js',
+                    //                 'scripts/directives/dashboard/stats/stats.js'
+                    //             ]
+                    //         })
+                    //     }
+                    // }
+                    templateUrl: 'views/dashboardnew.html',
+                    url: '/dashboardnew',
+                    controller: 'DashboardNewCtrl',
                     resolve: {
-                        loadMyFiles: function($ocLazyLoad) {
+                        loadMyFile: function($ocLazyLoad) {
                             return $ocLazyLoad.load({
                                 name: 'sbAdminApp',
-                                files: [
-                                    'scripts/controllers/main.js',
-                                    'scripts/directives/timeline/timeline.js',
-                                    'scripts/directives/notifications/notifications.js',
-                                    'scripts/directives/chat/chat.js',
-                                    'scripts/directives/dashboard/stats/stats.js'
-                                ]
+                                files: ['scripts/controllers/dashboardnewController.js',
+                                        'scripts/directives/dashboard/fourmstatus/fourm.js',
+                                        'scripts/directives/dashboard/kpistatus/kpi.js',
+                                        'scripts/directives/dashboard/outputstatus/outputstatus.js',
+                                        'scripts/directives/dashboard/statsnew/stats.js'
+                                        ]
                             })
                         }
                     }
