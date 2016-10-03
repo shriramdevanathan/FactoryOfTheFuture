@@ -272,6 +272,7 @@ angular.module('sbAdminApp')
                 linelead: "Shriram",
                 supervisor: "Michael",
                 type: "comments",
+                products: instrumentName3
             },
             {
                 id: 1,
@@ -281,6 +282,7 @@ angular.module('sbAdminApp')
                 linelead: "Shriram",
                 supervisor: "Michael",
                 type: "comments",
+                products: instrumentName1
             }, {
                 id: 2,
                 instrumentName: instrumentName2,
@@ -288,7 +290,8 @@ angular.module('sbAdminApp')
                 colour: "yellow",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName2
             }, {
                 id: 3,
                 instrumentName: instrumentName3,
@@ -296,7 +299,8 @@ angular.module('sbAdminApp')
                 colour: "red",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName3
             }, {
                 id: 4,
                 instrumentName: instrumentName2,
@@ -304,7 +308,8 @@ angular.module('sbAdminApp')
                 colour: "yellow",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName2
             }, {
                 id: 5,
                 instrumentName: instrumentName3,
@@ -312,7 +317,8 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName3
             }, {
                 id: 6,
                 instrumentName: instrumentName4,
@@ -320,7 +326,8 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName4
             }, {
                 id: 7,
                 instrumentName: instrumentName1,
@@ -328,7 +335,8 @@ angular.module('sbAdminApp')
                 colour: "red",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName1
             }, {
                 id: 8,
                 instrumentName: instrumentName3,
@@ -336,7 +344,9 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName3
+
             }, {
                 id: 9,
                 instrumentName: instrumentName2,
@@ -344,7 +354,8 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName2
             }, {
                 id: 10,
                 instrumentName: instrumentName3,
@@ -352,7 +363,8 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName3
             }, {
                 id: 11,
                 instrumentName: instrumentName4,
@@ -360,7 +372,8 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName4
             }, {
                 id: 12,
                 instrumentName: instrumentName2,
@@ -368,7 +381,8 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName2
             }, {
                 id: 13,
                 instrumentName: instrumentName3,
@@ -376,7 +390,8 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName3
             }, {
                 id: 14,
                 instrumentName: instrumentName4,
@@ -384,7 +399,8 @@ angular.module('sbAdminApp')
                 colour: "yellow",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName4
             }, {
                 id: 15,
                 instrumentName: instrumentName2,
@@ -392,7 +408,8 @@ angular.module('sbAdminApp')
                 colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
-                type: "comments"
+                type: "comments",
+                products: instrumentName2
             }];
 
             $scope.clickInstrument = function(instr) {

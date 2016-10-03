@@ -76,7 +76,8 @@ angular.module('sbAdminApp')
                 'valuetemplate' : '=',
                 'cellstatus' : '=',
                 'onSaveHandler' : '&',
-                'model' : '='
+                'model' : '=',
+                'products' : '@'
             }
 
         }
