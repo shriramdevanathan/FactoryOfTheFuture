@@ -10,7 +10,7 @@ angular.module('sbAdminApp')
     .controller('DashboardNewCtrl',
         function($scope, $timeout) {
         $scope.cellStatus = [];
-        $scope.limit = 6;
+        $scope.limit = 5;
         $scope.fourMDataGrid = [];
         $scope.categoryDropDownEditor = [];
         $scope.fourMOptions = [];
@@ -67,109 +67,58 @@ angular.module('sbAdminApp')
                 
                 
                 for(var i = 0 ;i < $scope.limit; i++) {
-                    if(i==1){
-                        var dataSource = new kendo.data.DataSource({
-                            data: [{
-                                id: 1,
-                                item: 'Man',
-                                yesterday: 'red',
-                                today: 'red',
-                                remarks: 'Rearks1'
-                            }, {
-                                id: 2,
-                                item: 'Material',
-                                yesterday: 'yellow',
-                                today: 'green',
-                                remarks: 'Remarks'
-                            }, {
-                                id: 3,
-                                item: 'Machine',
-                                yesterday: 'yellow',
-                                today: 'green',
-                                remarks: 'Remarks'
-                            }, {
-                                id: 4,
-                                item: 'Method',
-                                yesterday: 'green',
-                                today: 'green',
-                                remarks: 'Remarks'
-                            }],
-                            schema: {
-                                model: {
-                                    id: "id",
-                                    fields: {
-                                        item: {
-                                            type: "string",
-                                            editable: true
-                                        },
-                                        yesterday: {
-                                            type: "string",
-                                            editable: true
-                                        },
-                                        today: {
-                                            type: "string",
-                                            editable: true
-                                        },
-                                        remarks: {
-                                            type: "string",
-                                            editable: true
-                                        }
+                   
+                    var dataSource = new kendo.data.DataSource({
+                        data: [{
+                            id: 1,
+                            item: 'Man',
+                            yesterday: 'red',
+                            today: 'green',
+                            remarks: 'Remarks'
+                        }, {
+                            id: 2,
+                            item: 'Material',
+                            yesterday: 'yellow',
+                            today: 'green',
+                            remarks: 'Remarks'
+                        }, {
+                            id: 3,
+                            item: 'Machine',
+                            yesterday: 'yellow',
+                            today: 'green',
+                            remarks: 'Remarks'
+                        }, {
+                            id: 4,
+                            item: 'Method',
+                            yesterday: 'green',
+                            today: 'green',
+                            remarks: 'Remarks'
+                        }],
+                        schema: {
+                            model: {
+                                id: "id",
+                                fields: {
+                                    item: {
+                                        type: "string",
+                                        editable: true
+                                    },
+                                    yesterday: {
+                                        type: "string",
+                                        editable: true
+                                    },
+                                    today: {
+                                        type: "string",
+                                        editable: true
+                                    },
+                                    remarks: {
+                                        type: "string",
+                                        editable: true
                                     }
                                 }
                             }
-                        });
-                    }else{
-                        var dataSource = new kendo.data.DataSource({
-                            data: [{
-                                id: 1,
-                                item: 'Man',
-                                yesterday: 'red',
-                                today: 'green',
-                                remarks: 'Remarks'
-                            }, {
-                                id: 2,
-                                item: 'Material',
-                                yesterday: 'yellow',
-                                today: 'green',
-                                remarks: 'Remarks'
-                            }, {
-                                id: 3,
-                                item: 'Machine',
-                                yesterday: 'yellow',
-                                today: 'green',
-                                remarks: 'Remarks'
-                            }, {
-                                id: 4,
-                                item: 'Method',
-                                yesterday: 'green',
-                                today: 'green',
-                                remarks: 'Remarks'
-                            }],
-                            schema: {
-                                model: {
-                                    id: "id",
-                                    fields: {
-                                        item: {
-                                            type: "string",
-                                            editable: true
-                                        },
-                                        yesterday: {
-                                            type: "string",
-                                            editable: true
-                                        },
-                                        today: {
-                                            type: "string",
-                                            editable: true
-                                        },
-                                        remarks: {
-                                            type: "string",
-                                            editable: true
-                                        }
-                                    }
-                                }
-                            }
-                        });
-                    }
+                        }
+                    });
+                
                     var options = {
                         columns: [{
                             field: "item",
@@ -263,19 +212,10 @@ angular.module('sbAdminApp')
             var instrumentName2 = "ViiA 7";
             var instrumentName3 = "7500 Fast";
             var instrumentName4 = "Step One & Step One Plus";
+            var instrumentName5 = "QS12K";
 
             $scope.instrumentObjArr = [{
                 id: 0,
-                instrumentName: instrumentName3,
-                comments: "",
-                colour: "green",
-                linelead: "Shriram",
-                supervisor: "Michael",
-                type: "comments",
-                products: instrumentName3
-            },
-            {
-                id: 1,
                 instrumentName: instrumentName1,
                 comments: "",
                 colour: "green",
@@ -283,33 +223,43 @@ angular.module('sbAdminApp')
                 supervisor: "Michael",
                 type: "comments",
                 products: instrumentName1
-            }, {
-                id: 2,
+            },
+            {
+                id: 1,
                 instrumentName: instrumentName2,
                 comments: "",
-                colour: "yellow",
+                colour: "green",
                 linelead: "Shriram",
                 supervisor: "Michael",
                 type: "comments",
                 products: instrumentName2
             }, {
-                id: 3,
+                id: 2,
                 instrumentName: instrumentName3,
                 comments: "",
-                colour: "red",
+                colour: "yellow",
                 linelead: "Shriram",
                 supervisor: "Michael",
                 type: "comments",
                 products: instrumentName3
             }, {
+                id: 3,
+                instrumentName: instrumentName4,
+                comments: "",
+                colour: "red",
+                linelead: "Shriram",
+                supervisor: "Michael",
+                type: "comments",
+                products: instrumentName4
+            }, {
                 id: 4,
-                instrumentName: instrumentName2,
+                instrumentName: instrumentName5,
                 comments: "",
                 colour: "yellow",
                 linelead: "Shriram",
                 supervisor: "Michael",
                 type: "comments",
-                products: instrumentName2
+                products: instrumentName5
             }, {
                 id: 5,
                 instrumentName: instrumentName3,
