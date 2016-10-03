@@ -43,9 +43,7 @@ angular.module('sbAdminApp')
                 }
                 $scope.onChangeHandler = function(idFourm) {
                     $scope.fourMDataGrid.refresh();
-                    
                 };
-                
 
                 $scope.dataSource = $scope.datasource;
                 $scope.opts = $scope.optionskendo;
@@ -54,8 +52,7 @@ angular.module('sbAdminApp')
                 };
                 $scope.valueTemplate4M = $scope.valuetemplate;
                 $scope.trafficLightDataSource = $scope.trafficsource;
-
-
+                
             },
             scope: {
                 'idFourm' : '@',

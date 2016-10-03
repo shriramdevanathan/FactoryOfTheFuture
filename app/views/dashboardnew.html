@@ -1,9 +1,3 @@
-   <div ng-init="callOnce()"  ng-controller="DashboardNewCtrl" >
-
-    	<statsnew ng-repeat="obj in instrumentObjArr | limitTo:limit" number="{{obj.instrumentName}}" id="{{obj.id}}" colour="{{obj.colour}}" type="{{obj.type}}" datasource="fourMDataSource[$index]" comments="{{obj.comments}}" optionskendo="fourMOptions[$index]" trafficsource="trafficLightDataSource" valuetemplate="valueTemplate4M" cellstatus="cellStatus[$index]" on-save-handler="onChangeHandler4M()" model="fourMDataGrid[$index]">
-        
-    </div>
-
-</div>
-
+<div ng-controller="DashboardNewCtrl" >
+    	<statsnew ng-repeat="obj in instrumentObjArr | limitTo:limit" number="{{obj.instrumentName}}" id="{{obj.id}}" colour="{{obj.colour}}" type="{{obj.type}}" datasource="fourMDataSource[$index]" comments="{{obj.comments}}" optionskendo="fourMOptions[$index]" trafficsource="trafficLightDataSource" valuetemplate="valueTemplate4M" cellstatus="cellStatus[$index]" on-save-handler="onChangeHandler4M()" model="fourMDataGrid[$index]"></statsnew>
 </div>

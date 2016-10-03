@@ -14,6 +14,7 @@ angular.module('sbAdminApp')
         $scope.fourMDataGrid = [];
         $scope.categoryDropDownEditor = [];
         $scope.fourMOptions = [];
+        
         function initFourMDirective() {
 
             function initFourMTable() {
@@ -465,8 +466,12 @@ angular.module('sbAdminApp')
                 return id + 1;
             }
         }
-            initFourMDirective();
-            initStat();
+        initFourMDirective();
+        initStat();
+        $timeout(function(){
+           $scope.$apply(); 
+        });
+            
         
         }
 );
