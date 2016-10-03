@@ -89,7 +89,7 @@ angular
                     //     }
                     // }
                     templateUrl: 'views/dashboardnew.html',
-                    url: '/dashboardnew',
+                    url: '/home',
                     controller: 'DashboardNewCtrl',
                     resolve: {
                         loadMyFile: function($ocLazyLoad) {
